@@ -29,6 +29,10 @@ public class OknoGlowne extends javax.swing.JFrame {
 
         bLogowanie = new javax.swing.JButton();
         bRejestracja = new javax.swing.JButton();
+        bParagon = new javax.swing.JButton();
+        MainPanel = new javax.swing.JPanel();
+        LoginPanel = new javax.swing.JPanel();
+        RejestracjaPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -46,6 +50,41 @@ public class OknoGlowne extends javax.swing.JFrame {
             }
         });
 
+        bParagon.setText("UŻYTKOWNIK NIEZALOGOWANY (PARAGON)");
+        bParagon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bParagonActionPerformed(evt);
+            }
+        });
+
+        MainPanel.setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout LoginPanelLayout = new javax.swing.GroupLayout(LoginPanel);
+        LoginPanel.setLayout(LoginPanelLayout);
+        LoginPanelLayout.setHorizontalGroup(
+            LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        LoginPanelLayout.setVerticalGroup(
+            LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        MainPanel.add(LoginPanel, "card2");
+
+        javax.swing.GroupLayout RejestracjaPanelLayout = new javax.swing.GroupLayout(RejestracjaPanel);
+        RejestracjaPanel.setLayout(RejestracjaPanelLayout);
+        RejestracjaPanelLayout.setHorizontalGroup(
+            RejestracjaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        RejestracjaPanelLayout.setVerticalGroup(
+            RejestracjaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        MainPanel.add(RejestracjaPanel, "card3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -54,8 +93,14 @@ public class OknoGlowne extends javax.swing.JFrame {
                 .addGap(219, 219, 219)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(bRejestracja, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
-                    .addComponent(bLogowanie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bLogowanie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(bParagon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(165, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -64,7 +109,14 @@ public class OknoGlowne extends javax.swing.JFrame {
                 .addComponent(bLogowanie, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bRejestracja, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bParagon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -77,6 +129,10 @@ public class OknoGlowne extends javax.swing.JFrame {
     private void bRejestracjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRejestracjaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bRejestracjaActionPerformed
+
+    private void bParagonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bParagonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bParagonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,7 +170,11 @@ public class OknoGlowne extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel LoginPanel;
+    private javax.swing.JPanel MainPanel;
+    private javax.swing.JPanel RejestracjaPanel;
     private javax.swing.JButton bLogowanie;
+    private javax.swing.JButton bParagon;
     private javax.swing.JButton bRejestracja;
     // End of variables declaration//GEN-END:variables
 }

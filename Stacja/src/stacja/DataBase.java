@@ -220,5 +220,23 @@ public class DataBase {
             System.out.println(e.getMessage());
            }
     }
+    
+    public static void CreateTableLogin(){
+        String sql = "create table if not exists Login ("
+                + "LogId integer primary key,"
+                + "LogUserName string,"
+                + "LogPassword string);";
+        
+        try (Connection conn = DriverManager.getConnection(url);
+            Statement stmt = conn.createStatement()) {
+
+            stmt.execute(sql);
+            //stmt.close();
+           }
+           catch (SQLException e) 
+           {
+                System.out.println(e.getMessage());
+           }
+    }
      
 }

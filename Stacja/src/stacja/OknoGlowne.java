@@ -30,9 +30,6 @@ public class OknoGlowne extends javax.swing.JFrame {
         bLogowanie = new javax.swing.JButton();
         bRejestracja = new javax.swing.JButton();
         bParagon = new javax.swing.JButton();
-        MainPanel = new javax.swing.JPanel();
-        LoginPanel = new javax.swing.JPanel();
-        RejestracjaPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,34 +54,6 @@ public class OknoGlowne extends javax.swing.JFrame {
             }
         });
 
-        MainPanel.setLayout(new java.awt.CardLayout());
-
-        javax.swing.GroupLayout LoginPanelLayout = new javax.swing.GroupLayout(LoginPanel);
-        LoginPanel.setLayout(LoginPanelLayout);
-        LoginPanelLayout.setHorizontalGroup(
-            LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        LoginPanelLayout.setVerticalGroup(
-            LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        MainPanel.add(LoginPanel, "card2");
-
-        javax.swing.GroupLayout RejestracjaPanelLayout = new javax.swing.GroupLayout(RejestracjaPanel);
-        RejestracjaPanel.setLayout(RejestracjaPanelLayout);
-        RejestracjaPanelLayout.setHorizontalGroup(
-            RejestracjaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        RejestracjaPanelLayout.setVerticalGroup(
-            RejestracjaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        MainPanel.add(RejestracjaPanel, "card3");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -96,11 +65,6 @@ public class OknoGlowne extends javax.swing.JFrame {
                     .addComponent(bLogowanie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(bParagon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(165, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,18 +76,19 @@ public class OknoGlowne extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bParagon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(64, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(MainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void bLogowanieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLogowanieActionPerformed
-        // TODO add your handling code here:
+        if(evt.getSource()==bLogowanie){
+            LogInFrame logNew = new LogInFrame();
+            logNew.show();
+            dispose();
+
+        }
+        
     }//GEN-LAST:event_bLogowanieActionPerformed
 
     private void bRejestracjaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRejestracjaActionPerformed
@@ -170,9 +135,6 @@ public class OknoGlowne extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel LoginPanel;
-    private javax.swing.JPanel MainPanel;
-    private javax.swing.JPanel RejestracjaPanel;
     private javax.swing.JButton bLogowanie;
     private javax.swing.JButton bParagon;
     private javax.swing.JButton bRejestracja;

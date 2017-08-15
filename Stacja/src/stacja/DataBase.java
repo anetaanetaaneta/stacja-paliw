@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  */
 public class DataBase {
     
-            static String url = "jdbc:sqlite:Planzajec.db";
+            static String url = "jdbc:sqlite:stacja.db";
             Connection conn = null;
             ResultSet rs = null;
             PreparedStatement pst = null;

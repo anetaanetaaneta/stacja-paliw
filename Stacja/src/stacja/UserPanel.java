@@ -63,6 +63,7 @@ public class UserPanel extends javax.swing.JFrame {
         stationPanel = new javax.swing.JPanel();
         fuelBtn = new javax.swing.JButton();
         washBtn = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         aboutPanel = new javax.swing.JPanel();
         aboutLabel = new javax.swing.JLabel();
         contactPanel = new javax.swing.JPanel();
@@ -164,7 +165,7 @@ public class UserPanel extends javax.swing.JFrame {
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(logBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         loginPanelLayout.setVerticalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,7 +189,7 @@ public class UserPanel extends javax.swing.JFrame {
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(registrationBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
         changingPanel.add(loginPanel, "loginPanel");
@@ -197,11 +198,11 @@ public class UserPanel extends javax.swing.JFrame {
         cleanPanel.setLayout(cleanPanelLayout);
         cleanPanelLayout.setHorizontalGroup(
             cleanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 697, Short.MAX_VALUE)
+            .addGap(0, 795, Short.MAX_VALUE)
         );
         cleanPanelLayout.setVerticalGroup(
             cleanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 343, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
 
         changingPanel.add(cleanPanel, "cleanPanel");
@@ -210,25 +211,34 @@ public class UserPanel extends javax.swing.JFrame {
 
         washBtn.setText("Myjnia");
 
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Katarzyna\\Downloads\\dystrybutor.jpg")); // NOI18N
+
         javax.swing.GroupLayout stationPanelLayout = new javax.swing.GroupLayout(stationPanel);
         stationPanel.setLayout(stationPanelLayout);
         stationPanelLayout.setHorizontalGroup(
             stationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(stationPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(stationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(fuelBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 297, Short.MAX_VALUE)
-                    .addComponent(washBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(390, Short.MAX_VALUE))
+                .addGroup(stationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(stationPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(stationPanelLayout.createSequentialGroup()
+                        .addComponent(fuelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
+                        .addComponent(washBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29))))
         );
         stationPanelLayout.setVerticalGroup(
             stationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(stationPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(fuelBtn)
+                .addGroup(stationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fuelBtn)
+                    .addComponent(washBtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(washBtn)
-                .addContainerGap(280, Short.MAX_VALUE))
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         changingPanel.add(stationPanel, "stationPanel");
@@ -243,14 +253,14 @@ public class UserPanel extends javax.swing.JFrame {
             .addGroup(aboutPanelLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(aboutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
         aboutPanelLayout.setVerticalGroup(
             aboutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(aboutPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(aboutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
 
         changingPanel.add(aboutPanel, "aboutPanel");
@@ -264,14 +274,14 @@ public class UserPanel extends javax.swing.JFrame {
             .addGroup(contactPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(531, Short.MAX_VALUE))
+                .addContainerGap(629, Short.MAX_VALUE))
         );
         contactPanelLayout.setVerticalGroup(
             contactPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contactPanelLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(282, Short.MAX_VALUE))
+                .addContainerGap(339, Short.MAX_VALUE))
         );
 
         changingPanel.add(contactPanel, "contactPanel");
@@ -307,7 +317,7 @@ public class UserPanel extends javax.swing.JFrame {
                     .addComponent(newUserField, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(surnameField)
                     .addComponent(emailField, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addContainerGap(387, Short.MAX_VALUE))
             .addGroup(registerPanelLayout.createSequentialGroup()
                 .addComponent(createAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -382,11 +392,15 @@ public class UserPanel extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 22, Short.MAX_VALUE))
         );
 
         pack();
@@ -501,6 +515,7 @@ public class UserPanel extends javax.swing.JFrame {
     private javax.swing.JTextField emailField;
     private javax.swing.JButton fuelBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -54,7 +54,7 @@ public class DataBase {
            {
             
             stmt.execute(sql);
-            // stmt.close();
+            conn.close();
            }
            catch (SQLException e) 
            {
@@ -77,7 +77,7 @@ public class DataBase {
            {
             
             stmt.execute(sql);
-            // stmt.close();
+            conn.close();
            }
            catch (SQLException e) 
            {
@@ -98,7 +98,7 @@ public class DataBase {
            {
             
             stmt.execute(sql);
-            // stmt.close();
+            conn.close();
            }
            catch (SQLException e) 
            {
@@ -120,7 +120,7 @@ public class DataBase {
            {
             
             stmt.execute(sql);
-            // stmt.close();
+            conn.close();
            }
            catch (SQLException e) 
            {
@@ -146,7 +146,7 @@ public class DataBase {
            {
             
             stmt.execute(sql);
-            // stmt.close();
+            conn.close();
            }
            catch (SQLException e) 
            {
@@ -169,7 +169,7 @@ public class DataBase {
            {
             
             stmt.execute(sql);
-            // stmt.close();
+            conn.close();
            }
            catch (SQLException e) 
            {
@@ -190,7 +190,7 @@ public class DataBase {
            {
             
             stmt.execute(sql);
-            // stmt.close();
+            conn.close();
            }
            catch (SQLException e) 
            {
@@ -213,7 +213,7 @@ public class DataBase {
            {
             
             stmt.execute(sql);
-            // stmt.close();
+            conn.close();
            }
            catch (SQLException e) 
            {
@@ -231,7 +231,7 @@ public class DataBase {
             Statement stmt = conn.createStatement()) {
 
             stmt.execute(sql);
-            //stmt.close();
+            conn.close();
            }
            catch (SQLException e) 
            {

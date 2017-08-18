@@ -5,6 +5,16 @@
  */
 package stacja;
 
+import java.awt.CardLayout;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Katarzyna
@@ -14,8 +24,23 @@ public class AdminPanel extends javax.swing.JFrame {
     /**
      * Creates new form AdminPanel
      */
+    Connection conn = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+    
+    
     public AdminPanel() {
         initComponents();
+
+        
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+
+            }
+
+        });
+        
     }
 
     /**
@@ -27,9 +52,46 @@ public class AdminPanel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        changingPanel2 = new javax.swing.JPanel();
+        klienciCard = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        clientsTable = new javax.swing.JTable();
+        editBtn = new javax.swing.JButton();
+        deleteBtn = new javax.swing.JButton();
+        newClientPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        newNameField = new javax.swing.JTextField();
+        newSurnameField = new javax.swing.JTextField();
+        newCompanyField = new javax.swing.JTextField();
+        newMailField = new javax.swing.JTextField();
+        newPhoneField = new javax.swing.JTextField();
+        newAddressField = new javax.swing.JTextField();
+        newCodeField = new javax.swing.JTextField();
+        newCityField = new javax.swing.JTextField();
+        newNIPField = new javax.swing.JTextField();
+        newRegonField = new javax.swing.JTextField();
+        newUserBtn = new javax.swing.JButton();
+        editUserBtn = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        idLabel = new javax.swing.JLabel();
+        companyPanel = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        CompanyTable = new javax.swing.JTable();
+        editCompanyBtn = new javax.swing.JButton();
+        deleteCompanyBtn = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         newMenu = new javax.swing.JMenu();
         klientsItem = new javax.swing.JMenuItem();
+        companyItem = new javax.swing.JMenuItem();
         newKlientItem = new javax.swing.JMenuItem();
         loyProgMenu = new javax.swing.JMenu();
         rulesItem = new javax.swing.JMenuItem();
@@ -40,6 +102,275 @@ public class AdminPanel extends javax.swing.JFrame {
         cameraItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        changingPanel2.setLayout(new java.awt.CardLayout());
+
+        clientsTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID Klienta", "Imię", "Nazwisko", "e-mail", "Nr telefonu", "Ulica", "Kod pocztowy", "Miasto"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        clientsTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(clientsTable);
+        if (clientsTable.getColumnModel().getColumnCount() > 0) {
+            clientsTable.getColumnModel().getColumn(0).setResizable(false);
+            clientsTable.getColumnModel().getColumn(0).setPreferredWidth(3);
+            clientsTable.getColumnModel().getColumn(1).setResizable(false);
+            clientsTable.getColumnModel().getColumn(2).setResizable(false);
+            clientsTable.getColumnModel().getColumn(3).setResizable(false);
+            clientsTable.getColumnModel().getColumn(4).setResizable(false);
+            clientsTable.getColumnModel().getColumn(5).setResizable(false);
+            clientsTable.getColumnModel().getColumn(6).setResizable(false);
+            clientsTable.getColumnModel().getColumn(7).setResizable(false);
+        }
+
+        editBtn.setText("Edytuj");
+        editBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editBtnActionPerformed(evt);
+            }
+        });
+
+        deleteBtn.setText("Usuń");
+        deleteBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout klienciCardLayout = new javax.swing.GroupLayout(klienciCard);
+        klienciCard.setLayout(klienciCardLayout);
+        klienciCardLayout.setHorizontalGroup(
+            klienciCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(klienciCardLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(klienciCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(klienciCardLayout.createSequentialGroup()
+                        .addComponent(editBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80)
+                        .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1107, Short.MAX_VALUE)))
+        );
+        klienciCardLayout.setVerticalGroup(
+            klienciCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(klienciCardLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addGroup(klienciCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(editBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                    .addComponent(deleteBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        changingPanel2.add(klienciCard, "klienciCard");
+
+        jLabel1.setText("Imie");
+
+        jLabel2.setText("Nazwisko");
+
+        jLabel3.setText("Nazwa firmy");
+
+        jLabel4.setText("Adres e-mail");
+
+        jLabel5.setText("Numer telefonu");
+
+        jLabel6.setText("Ulica i numer domu");
+
+        jLabel7.setText("Kod pocztowy");
+
+        jLabel8.setText("Miasto");
+
+        jLabel9.setText("NIP");
+
+        jLabel10.setText("Regon");
+
+        newUserBtn.setText("Dodaj");
+        newUserBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newUserBtnActionPerformed(evt);
+            }
+        });
+
+        editUserBtn.setText("Edytuj");
+        editUserBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editUserBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Numer ID klienta");
+
+        javax.swing.GroupLayout newClientPanelLayout = new javax.swing.GroupLayout(newClientPanel);
+        newClientPanel.setLayout(newClientPanelLayout);
+        newClientPanelLayout.setHorizontalGroup(
+            newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(newClientPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(newClientPanelLayout.createSequentialGroup()
+                        .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10))
+                        .addGap(26, 26, 26)
+                        .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(newNameField)
+                            .addComponent(newSurnameField)
+                            .addComponent(newCompanyField)
+                            .addComponent(newMailField)
+                            .addComponent(newPhoneField)
+                            .addComponent(newAddressField)
+                            .addComponent(newCodeField)
+                            .addComponent(newCityField)
+                            .addComponent(newNIPField)
+                            .addComponent(newRegonField, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newClientPanelLayout.createSequentialGroup()
+                        .addComponent(newUserBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(editUserBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(124, 124, 124)
+                .addComponent(jLabel11)
+                .addGap(18, 18, 18)
+                .addComponent(idLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(439, Short.MAX_VALUE))
+        );
+        newClientPanelLayout.setVerticalGroup(
+            newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(newClientPanelLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(newNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(idLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(newSurnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(newCompanyField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(newMailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(newPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(newAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(newCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(newCityField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(newNIPField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(newRegonField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(newUserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                    .addComponent(editUserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+
+        changingPanel2.add(newClientPanel, "newClientPanel");
+
+        CompanyTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID Firmy", "Nazwa", "NIP", "Regon", "Właściciel", "ID właściciela"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(CompanyTable);
+        if (CompanyTable.getColumnModel().getColumnCount() > 0) {
+            CompanyTable.getColumnModel().getColumn(0).setResizable(false);
+            CompanyTable.getColumnModel().getColumn(0).setPreferredWidth(3);
+            CompanyTable.getColumnModel().getColumn(1).setResizable(false);
+            CompanyTable.getColumnModel().getColumn(2).setResizable(false);
+            CompanyTable.getColumnModel().getColumn(3).setResizable(false);
+            CompanyTable.getColumnModel().getColumn(4).setResizable(false);
+            CompanyTable.getColumnModel().getColumn(5).setResizable(false);
+            CompanyTable.getColumnModel().getColumn(5).setPreferredWidth(2);
+        }
+
+        editCompanyBtn.setText("Edytuj");
+        editCompanyBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editCompanyBtnActionPerformed(evt);
+            }
+        });
+
+        deleteCompanyBtn.setText("Usuń");
+
+        javax.swing.GroupLayout companyPanelLayout = new javax.swing.GroupLayout(companyPanel);
+        companyPanel.setLayout(companyPanelLayout);
+        companyPanelLayout.setHorizontalGroup(
+            companyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(companyPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(companyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(companyPanelLayout.createSequentialGroup()
+                        .addComponent(editCompanyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(77, 77, 77)
+                        .addComponent(deleteCompanyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+        companyPanelLayout.setVerticalGroup(
+            companyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(companyPanelLayout.createSequentialGroup()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 29, Short.MAX_VALUE)
+                .addGroup(companyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(deleteCompanyBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                    .addComponent(editCompanyBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        changingPanel2.add(companyPanel, "companyPanel");
 
         newMenu.setText("Klienci");
         newMenu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -61,7 +392,20 @@ public class AdminPanel extends javax.swing.JFrame {
         });
         newMenu.add(klientsItem);
 
+        companyItem.setText("Firmy");
+        companyItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                companyItemActionPerformed(evt);
+            }
+        });
+        newMenu.add(companyItem);
+
         newKlientItem.setText("Dodaj klienta");
+        newKlientItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newKlientItemActionPerformed(evt);
+            }
+        });
         newMenu.add(newKlientItem);
 
         jMenuBar1.add(newMenu);
@@ -96,18 +440,21 @@ public class AdminPanel extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1127, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(changingPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 513, Short.MAX_VALUE)
+            .addComponent(changingPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void klientsItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_klientsItemActionPerformed
-        
+        CardLayout card = (CardLayout) changingPanel2.getLayout();
+        card.show(changingPanel2, "klienciCard");        
     }//GEN-LAST:event_klientsItemActionPerformed
 
     private void newMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newMenuMouseClicked
@@ -118,6 +465,380 @@ public class AdminPanel extends javax.swing.JFrame {
 
     }//GEN-LAST:event_newMenuActionPerformed
 
+    private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
+        
+        int index = clientsTable.getSelectedRow();
+        System.out.println("Wybrany index" + index);
+        String nr_id = (String) clientsTable.getValueAt(index, 0);
+        String imie = (String) clientsTable.getValueAt(index, 1);
+        String nazwisko = (String) clientsTable.getValueAt(index, 2);
+        String mail = (String) clientsTable.getValueAt(index, 3);
+        String telefon = (String) clientsTable.getValueAt(index, 4);
+        String ulica = (String) clientsTable.getValueAt(index, 5);
+        String kod = (String) clientsTable.getValueAt(index, 6);
+        String miasto = (String) clientsTable.getValueAt(index, 7);
+        
+        String firma = "", nip = "", regon = "";
+        
+        String wybierzFirme = "select * from Firma where fir_klient_id=" + nr_id;
+        
+        try {
+            Connection conn = DataBase.Connection();
+            
+            pst = conn.prepareStatement(wybierzFirme);
+            rs = pst.executeQuery();
+            
+            if(rs.next()) {
+                firma = rs.getString("fir_nazwa");
+                nip = rs.getString("fir_nip");
+                regon = rs.getString("fir_regon");
+            }
+            
+            pst.close(); rs.close(); conn.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Błąd w wyszukaniu firmy dla podanego klienta " + ex);
+        }
+        
+        if(evt.getSource()== editBtn) {
+            CardLayout card = (CardLayout) changingPanel2.getLayout();
+            card.show(changingPanel2, "newClientPanel");
+            
+            newUserBtn.setVisible(false);
+            
+            idLabel.setText(nr_id);
+            newNameField.setText(imie);
+            newSurnameField.setText(nazwisko);
+            newMailField.setText(mail);
+            newPhoneField.setText(telefon);
+            newAddressField.setText(ulica);
+            newCodeField.setText(kod);
+            newCityField.setText(miasto);
+            newCompanyField.setText(firma);
+            newNIPField.setText(nip);
+            newRegonField.setText(regon);
+            
+            editUserBtn.setVisible(true);
+        }
+    }//GEN-LAST:event_editBtnActionPerformed
+
+    private void newUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUserBtnActionPerformed
+        ResultSet rs;
+        PreparedStatement pst;
+        Statement stmt;
+        
+        NewID noweID = new NewID();
+        int userID = noweID.UstawNumer("kli_id","klient");
+        String idU = Integer.toString(userID);
+        idLabel.setText(idU);
+        
+        int placeID = noweID.UstawNumer("adr_id","adres");
+        int companyID = noweID.UstawNumer("fir_id", "firma");
+        
+        String imie = newNameField.getText();
+        String nazwisko = newSurnameField.getText();
+        //String haslo = newPswordFieldNew.getText();
+        String ulica = newAddressField.getText();
+        String kodPoczt = newCodeField.getText();
+        String miasto = newCityField.getText();
+        String email = newMailField.getText();
+        String nrtel = newPhoneField.getText();
+        
+        String firma = newCompanyField.getText();
+        String nip = newNIPField.getText();
+        String regon = newRegonField.getText();
+        
+        String addClient = "insert into Klient (kli_id, kli_imie, kli_nazwisko, kli_adres_id, kli_mail, kli_telefon) values"
+                + "('" + userID + "','" + imie + "','" + nazwisko + "','" + placeID + "','" + email +"','"
+                + nrtel + "')";
+        
+        String addPlace = "insert into Adres (adr_id, adr_ulica, adr_kod, adr_miasto, adr_klient_id) values"
+                + "('" + placeID + "','" + ulica + "','" + kodPoczt + "','" + miasto + "','" + userID + "')";
+        
+        String addCompany = "insert into Firma (fir_id, fir_nazwa, fir_nip, fir_regon, fir_klient_id) values"
+                + "('" + companyID + "','" + firma + "','" + nip + "','" + regon + "','" + userID + "')";
+        
+        
+        
+        try {
+            conn = DataBase.Connection();
+            stmt = conn.createStatement();
+            
+            if(imie.equals("") || nazwisko.equals("") || email.equals("")) {
+                JOptionPane.showMessageDialog(null, "Uzupełnij wszystkie wymagane dane!");
+                
+            } else {
+            
+                if(firma.equals("") && nip.equals("") && regon.equals("")){
+                    stmt.executeUpdate(addClient);
+                    stmt.executeUpdate(addPlace);
+                    JOptionPane.showMessageDialog(null, "Dodano nowego klienta!");
+                
+                } else if (!firma.equals("") && (nip.equals("") || regon.equals(""))) {
+                    JOptionPane.showMessageDialog(null, "Uzupełnij wszystkie dane dotyczące firmy!");
+                
+                } else if ((firma.equals("") || nip.equals("")) && !regon.equals("")) {
+                    JOptionPane.showMessageDialog(null, "Uzupełnij wszystkie dane dotyczące firmy!");
+                
+                } else if ((firma.equals("") || regon.equals("")) && !nip.equals("")) {
+                    JOptionPane.showMessageDialog(null, "Uzupełnij wszystkie dane dotyczące firmy!");
+                
+                } else {
+                    stmt.executeUpdate(addClient);
+                    stmt.executeUpdate(addPlace);
+                    stmt.executeUpdate(addCompany);
+                    JOptionPane.showMessageDialog(null, "Dodano nowego klienta!");
+                }
+                
+                newNameField.setText("");
+                newSurnameField.setText("");
+                
+                newAddressField.setText("");
+                newCodeField.setText("");
+                newCityField.setText("");
+                newMailField.setText("");
+                newPhoneField.setText("");
+        
+                newCompanyField.setText("");
+                newNIPField.setText("");
+                newRegonField.setText("");
+                
+                stmt.close();
+                conn.close();
+            }
+            
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Nie udało się dodać rekordu do bazy" + ex);
+        }
+    }//GEN-LAST:event_newUserBtnActionPerformed
+
+    private void companyItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_companyItemActionPerformed
+        CardLayout card = (CardLayout) changingPanel2.getLayout();
+        card.show(changingPanel2, "companyPanel");
+        
+    }//GEN-LAST:event_companyItemActionPerformed
+
+    private void newKlientItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newKlientItemActionPerformed
+        CardLayout card = (CardLayout) changingPanel2.getLayout();
+        card.show(changingPanel2, "newClientPanel");
+
+        editUserBtn.setVisible(false);
+        newUserBtn.setVisible(true);
+        
+        newNameField.setText("");
+        newSurnameField.setText("");
+        newMailField.setText("");
+        newPhoneField.setText("");
+        newAddressField.setText("");
+        newCodeField.setText("");
+        newCityField.setText("");
+        newCompanyField.setText("");
+        newNIPField.setText("");
+        newRegonField.setText("");
+        
+    }//GEN-LAST:event_newKlientItemActionPerformed
+
+    private void editUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editUserBtnActionPerformed
+        
+        klienciCard.setEnabled(false);
+        clientsTable.setEnabled(false);
+        
+        String idkli = idLabel.getText(),
+                imie = null, nazwisko = null, ulica = null, kodPoczt = null, miasto = null, 
+                email = null, nrtel = null, firma = null, nip = null, regon = null;
+        
+        if(!(newNameField.getText()).equals(""))
+            imie = newNameField.getText();
+        if(!(newSurnameField.getText()).equals(""))
+            nazwisko = newSurnameField.getText();
+        if(!(newAddressField.getText()).equals(""))
+            ulica = newAddressField.getText();
+        if(!(newCodeField.getText()).equals(""))
+            kodPoczt = newCodeField.getText();
+        if(!(newCityField.getText()).equals(""))
+            miasto = newCityField.getText();
+        if(!(newMailField.getText()).equals(""))
+            email = newMailField.getText();
+        if(!(newPhoneField.getText()).equals(""))
+            nrtel = newPhoneField.getText();
+        
+        if(!(newCompanyField.getText()).equals(""))
+            firma = newCompanyField.getText();
+        if(!(newNIPField.getText()).equals(""))
+            nip = newNIPField.getText();
+        if(!(newRegonField.getText()).equals(""))
+            regon = newRegonField.getText();
+        
+        Statement stmt;
+        ResultSet rs2; PreparedStatement pst2;
+        ResultSet rs3; PreparedStatement pst3;
+        
+        String updateClient = "update Klient set kli_imie='" + imie +"', kli_nazwisko='" + nazwisko + "', kli_mail='"
+                + email + "', kli_telefon='" + nrtel + "' where kli_id=" + idkli;
+        
+        String findAddress = "select * from Adres where adr_klient_id=" + idkli;
+        
+        String findCompany = "select * from Firma where fir_klient_id=" +idkli;
+        
+        String updateAddress = "update Adres set adr_ulica='" + ulica + "', adr_kod='" + kodPoczt +
+                "', adr_miasto='" + miasto +"' where adr_klient_id=" + idkli;
+        
+        NewID noweid = new NewID();
+        int adrID = noweid.UstawNumer("adr_id", "adres");
+        int compID = noweid.UstawNumer("fir_id", "firma");
+        
+        String newAddress = "insert into Adres (adr_id, adr_ulica, adr_kod, adr_miasto, adr_klient_id) values "
+                + "('" + adrID + "','" + ulica + "','" + kodPoczt + "','" + miasto + "','" + idkli + "')";
+        
+        String updateCompany = "update Firma set fir_nip='"+ nip + "', fir_regon='" + regon + "', fir_nazwa='" + firma +
+                "' where fir_klient_id=" + idkli;
+        
+        String newCompany = "insert into Firma (fir_id, fir_nip, fir_regon, fir_nazwa, fir_klient_id) values ('"
+                + compID +"','" + nip + "','" + regon + "','" + firma + "','" + idkli + "')"; 
+        
+        String wybierzKlientow = "select kli_id, kli_imie, kli_nazwisko, kli_mail, kli_telefon, adr_ulica, adr_kod, "
+                + "adr_miasto from klient, adres where kli_id=adr_klient_id and adr_id=kli_adres_id";
+        
+        FillTable uzupelnij = new FillTable();
+        
+        
+        try {
+            Connection conn = DataBase.Connection();
+
+            stmt = conn.createStatement();
+            pst = conn.prepareStatement(findAddress);
+            rs = pst.executeQuery();
+            
+            stmt.executeUpdate(updateClient);
+            
+            
+                if(rs.next()){
+                    stmt.executeUpdate(updateAddress);
+                    rs.close();
+                } else {
+                    if(!(newAddressField.equals("")) || !(newCodeField.equals("")) || !(newCityField.equals(""))) {
+                    stmt.executeUpdate(newAddress);
+                    rs.close();
+                }
+            }
+            pst.close();
+            pst2 = conn.prepareStatement(findCompany);
+            rs2 = pst2.executeQuery();
+            
+            
+                if(rs.next()) {
+                    stmt.executeUpdate(updateCompany);
+                    rs2.close();
+                } else {
+                    if(!(newCompanyField.equals("")) || !(newNIPField.equals("")) || !(newRegonField.equals(""))) {
+                    stmt.executeUpdate(newCompany);
+                    rs2.close();
+                }
+            }
+            pst2.close();
+            
+            pst3 = conn.prepareStatement(wybierzKlientow);
+            rs3 = pst3.executeQuery();
+            
+            uzupelnij.ClearTable(clientsTable);
+            uzupelnij.FillCompany(clientsTable, rs3);
+            
+            rs3.close(); pst3.close();
+            stmt.close();
+            conn.close();
+            
+            JOptionPane.showMessageDialog(null, "Zaktualizowano dane");
+                    
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Nie udało się zaktualizować rekordu! " + ex);
+        } 
+    }//GEN-LAST:event_editUserBtnActionPerformed
+
+    private void editCompanyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editCompanyBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editCompanyBtnActionPerformed
+
+    private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
+        
+        Statement stmt;
+        FillTable uzupelnij = new FillTable();
+        
+        int index = clientsTable.getSelectedRow();
+        String nr_id = (String) clientsTable.getValueAt(index, 0);
+        
+        String usunKlienta = "delete from klient where kli_id=" + nr_id;
+        String usunFirme = "delete from firma where fir_klient_id=" + nr_id;
+        String usunAdres = "delete from Adres where adr_klient_id=" + nr_id;
+        
+        String wybierzKlientow = "select kli_id, kli_imie, kli_nazwisko, kli_mail, kli_telefon, adr_ulica, adr_kod, "
+                + "adr_miasto from klient, adres where kli_id=adr_klient_id and adr_id=kli_adres_id";
+        
+        try {
+            Connection conn = DataBase.Connection();
+            stmt = conn.createStatement();
+            pst = conn.prepareStatement(wybierzKlientow);
+            rs = pst.executeQuery();
+            
+            stmt.executeUpdate(usunKlienta);
+            stmt.executeUpdate(usunFirme);
+            stmt.executeUpdate(usunAdres);
+            
+            uzupelnij.ClearTable(clientsTable);
+            uzupelnij.FillCompany(clientsTable, rs);
+            
+            stmt.close(); pst.close(); rs.close();
+            conn.close();
+            
+            JOptionPane.showMessageDialog(null, "Usunięto dane z bazy");
+            
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Nie udało się usunąć danych: " + ex);
+        }                
+        
+    }//GEN-LAST:event_deleteBtnActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+
+        FillTable uzupelnij = new FillTable();
+        ResultSet rs2;
+        PreparedStatement pst2;
+        Statement stmt;
+        
+        uzupelnij.ClearTable(clientsTable);
+        uzupelnij.ClearTable(CompanyTable);
+        
+        String wybierzKlientow = "select kli_id, kli_imie, kli_nazwisko, kli_mail, kli_telefon, adr_ulica, adr_kod, "
+                + "adr_miasto from klient, adres where kli_id=adr_klient_id and adr_id=kli_adres_id";
+        
+        String wybierzFirmy = "select fir_id, fir_nazwa, fir_nip, fir_regon, fir_klient_id, kli_imie, kli_nazwisko from "
+                + "Firma, klient where fir_klient_id=kli_id";
+            
+        try {
+            Connection conn = DataBase.Connection();
+            pst = conn.prepareStatement(wybierzKlientow);
+            rs = pst.executeQuery();
+            
+            uzupelnij.FillClients(clientsTable, rs);
+            pst.close(); rs.close();
+            
+            pst2 = conn.prepareStatement(wybierzFirmy);
+            rs2 = pst2.executeQuery();
+            
+            uzupelnij.FillCompany(CompanyTable, rs2);
+            pst2.close(); rs2.close();
+            
+            conn.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Błąd w AdminPanel: " + ex);
+        }         
+        
+        clientsTable.setAutoCreateRowSorter(true);
+        CompanyTable.setAutoCreateRowSorter(true);
+        
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -154,14 +875,51 @@ public class AdminPanel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable CompanyTable;
     private javax.swing.JMenuItem cameraItem;
     private javax.swing.JMenu cameraMenu;
+    private javax.swing.JPanel changingPanel2;
+    private javax.swing.JTable clientsTable;
+    private javax.swing.JMenuItem companyItem;
+    private javax.swing.JPanel companyPanel;
+    private javax.swing.JButton deleteBtn;
+    private javax.swing.JButton deleteCompanyBtn;
+    private javax.swing.JButton editBtn;
+    private javax.swing.JButton editCompanyBtn;
+    private javax.swing.JButton editUserBtn;
+    private javax.swing.JLabel idLabel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JPanel klienciCard;
     private javax.swing.JMenuItem klientsItem;
     private javax.swing.JMenuItem listItem;
     private javax.swing.JMenu loyProgMenu;
+    private javax.swing.JTextField newAddressField;
+    private javax.swing.JTextField newCityField;
+    private javax.swing.JPanel newClientPanel;
+    private javax.swing.JTextField newCodeField;
+    private javax.swing.JTextField newCompanyField;
     private javax.swing.JMenuItem newKlientItem;
+    private javax.swing.JTextField newMailField;
     private javax.swing.JMenu newMenu;
+    private javax.swing.JTextField newNIPField;
+    private javax.swing.JTextField newNameField;
+    private javax.swing.JTextField newPhoneField;
+    private javax.swing.JTextField newRegonField;
+    private javax.swing.JTextField newSurnameField;
+    private javax.swing.JButton newUserBtn;
     private javax.swing.JMenuItem rulesItem;
     private javax.swing.JMenuItem washItem;
     private javax.swing.JMenu washMenu;

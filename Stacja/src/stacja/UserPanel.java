@@ -9,6 +9,9 @@ import java.awt.CardLayout;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,7 +28,7 @@ public class UserPanel extends javax.swing.JFrame {
      */
     public UserPanel() {
         initComponents();
-        conn = DataBase.Connection();
+
         
         CardLayout card = (CardLayout) changingPanel.getLayout();
         card.show(changingPanel, "cleanPanel");
@@ -54,11 +57,11 @@ public class UserPanel extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         userNameField = new javax.swing.JTextField();
-        passwordField = new javax.swing.JTextField();
         logBtn = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         registrationBtn = new javax.swing.JButton();
         warnLabel = new javax.swing.JLabel();
+        PasswordField = new javax.swing.JPasswordField();
         cleanPanel = new javax.swing.JPanel();
         stationPanel = new javax.swing.JPanel();
         fuelBtn = new javax.swing.JButton();
@@ -69,10 +72,7 @@ public class UserPanel extends javax.swing.JFrame {
         contactPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         registerPanel = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        newUserField = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        newPasswordField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         nameField = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -80,6 +80,21 @@ public class UserPanel extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         emailField = new javax.swing.JTextField();
         createAccBtn = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        streetField = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        kodeField = new javax.swing.JTextField();
+        companyField = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        phoneField = new javax.swing.JLabel();
+        numberField = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        cityField = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        nipField = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        regonField = new javax.swing.JTextField();
+        passwordFieldNew = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -139,6 +154,8 @@ public class UserPanel extends javax.swing.JFrame {
         warnLabel.setForeground(new java.awt.Color(255, 0, 51));
         warnLabel.setText("Niepoprawna nazwa użytkownika lub hasło.");
 
+        PasswordField.setText("jPasswordField1");
+
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
         loginPanelLayout.setHorizontalGroup(
@@ -159,13 +176,13 @@ public class UserPanel extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(userNameField, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                    .addComponent(passwordField))
+                                    .addComponent(PasswordField))
                                 .addGap(31, 31, 31)
-                                .addComponent(warnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(warnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(loginPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(logBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(130, Short.MAX_VALUE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         loginPanelLayout.setVerticalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +196,9 @@ public class UserPanel extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passwordField)))
+                            .addGroup(loginPanelLayout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(PasswordField))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(warnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -189,7 +208,7 @@ public class UserPanel extends javax.swing.JFrame {
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(registrationBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
 
         changingPanel.add(loginPanel, "loginPanel");
@@ -198,11 +217,11 @@ public class UserPanel extends javax.swing.JFrame {
         cleanPanel.setLayout(cleanPanelLayout);
         cleanPanelLayout.setHorizontalGroup(
             cleanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
+            .addGap(0, 872, Short.MAX_VALUE)
         );
         cleanPanelLayout.setVerticalGroup(
             cleanPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 462, Short.MAX_VALUE)
         );
 
         changingPanel.add(cleanPanel, "cleanPanel");
@@ -253,14 +272,14 @@ public class UserPanel extends javax.swing.JFrame {
             .addGroup(aboutPanelLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(aboutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(196, Short.MAX_VALUE))
+                .addContainerGap(273, Short.MAX_VALUE))
         );
         aboutPanelLayout.setVerticalGroup(
             aboutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(aboutPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(aboutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(182, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
 
         changingPanel.add(aboutPanel, "aboutPanel");
@@ -274,29 +293,58 @@ public class UserPanel extends javax.swing.JFrame {
             .addGroup(contactPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(629, Short.MAX_VALUE))
+                .addContainerGap(706, Short.MAX_VALUE))
         );
         contactPanelLayout.setVerticalGroup(
             contactPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contactPanelLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(339, Short.MAX_VALUE))
+                .addContainerGap(401, Short.MAX_VALUE))
         );
 
         changingPanel.add(contactPanel, "contactPanel");
 
-        jLabel5.setText("Nazwa użytkownika");
-
         jLabel6.setText("Hasło");
 
         jLabel7.setText("Imię");
+
+        nameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameFieldActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Nazwisko");
 
         jLabel9.setText("Adres e-mail");
 
         createAccBtn.setText("Utwórz konto");
+        createAccBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createAccBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Ulica");
+
+        jLabel12.setText("Kod pocztowy");
+
+        jLabel13.setText("Nazwa firmy");
+
+        phoneField.setText("Numer telefonu");
+
+        jLabel14.setText("Miasto");
+
+        jLabel15.setText("NIP");
+
+        nipField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nipFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("Regon");
 
         javax.swing.GroupLayout registerPanelLayout = new javax.swing.GroupLayout(registerPanel);
         registerPanel.setLayout(registerPanelLayout);
@@ -305,49 +353,95 @@ public class UserPanel extends javax.swing.JFrame {
             .addGroup(registerPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(nameField)
-                    .addComponent(newPasswordField, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(newUserField, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(surnameField)
-                    .addComponent(emailField, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
-                .addContainerGap(387, Short.MAX_VALUE))
-            .addGroup(registerPanelLayout.createSequentialGroup()
-                .addComponent(createAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(registerPanelLayout.createSequentialGroup()
+                        .addComponent(createAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(registerPanelLayout.createSequentialGroup()
+                        .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(registerPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(36, 36, 36)
+                                .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(registerPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(127, 127, 127)
+                                .addComponent(surnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(registerPanelLayout.createSequentialGroup()
+                                    .addComponent(phoneField)
+                                    .addGap(97, 97, 97)
+                                    .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(registerPanelLayout.createSequentialGroup()
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(4, 4, 4)
+                                    .addComponent(passwordFieldNew, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(registerPanelLayout.createSequentialGroup()
+                                    .addComponent(jLabel9)
+                                    .addGap(112, 112, 112)
+                                    .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, registerPanelLayout.createSequentialGroup()
+                                    .addComponent(jLabel13)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(companyField, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)
+                        .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addGap(19, 19, 19)
+                        .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(nipField, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
+                            .addComponent(cityField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(kodeField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(streetField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(regonField))
+                        .addGap(0, 16, Short.MAX_VALUE))))
         );
         registerPanelLayout.setVerticalGroup(
             registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(registerPanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(newUserField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(59, 59, 59)
+                .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(newPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(registerPanelLayout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(passwordFieldNew, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
                     .addComponent(nameField, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(streetField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel8)
-                    .addComponent(surnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(surnameField, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel12)
+                        .addComponent(kodeField, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(companyField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13)
+                    .addComponent(cityField, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel15)
+                    .addComponent(nipField))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(phoneField)
+                    .addComponent(numberField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16)
+                    .addComponent(regonField, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(89, 89, 89)
                 .addComponent(createAccBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(88, 88, 88))
+                .addGap(51, 51, 51))
         );
 
         changingPanel.add(registerPanel, "registerPanel");
@@ -407,40 +501,36 @@ public class UserPanel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void logBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logBtnActionPerformed
-         String logSql = "select * from Login where LogUserName=? and LogPassword=?";
+        String sql = "select * from Admin where admName=? and admPassword=? ";
         
-//        try {
-//            pst = conn.prepareStatement(logSql);
-//            pst.setString(1, userNameField.getText());
-//            pst.setString(2, passwordField.getText());
-//            
-//            rs = pst.executeQuery();
-//            
-//            if(rs.next()) {
-//                
-                CardLayout card = (CardLayout) changingPanel.getLayout();
-                card.show(changingPanel, "cleanPanel");
-                loginBtn.setVisible(false);
-                logoutBtn.setVisible(true);
-//            }
-//            
-//            else {
-//                warningLabel.setVisible(true);
-//                
-//            }
-//            pst.close();
-//            
-//        } catch (Exception ex) {
-//            JOptionPane.showMessageDialog(null, ex);
-//        }
+        try{
+            conn = DataBase.Connection();
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, userNameField.getText());
+            pst.setString(2, PasswordField.getText());
         
+            rs = pst.executeQuery();
         
-//        if(evt.getSource()==logInBtn){
-//            MainWindow mainWin = new MainWindow();
-//            mainWin.show();
-//            dispose();
-//
-//        }
+            if(rs.next())
+            {
+                dispose();
+                AdminPanel admin = new AdminPanel();
+                admin.setVisible(true);
+            
+            }
+            else 
+            {
+                warnLabel.setVisible(true);
+            
+            }
+            pst.close();
+            conn.close();
+        }
+        
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        
     }//GEN-LAST:event_logBtnActionPerformed
 
     private void registrationBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrationBtnActionPerformed
@@ -467,6 +557,105 @@ public class UserPanel extends javax.swing.JFrame {
         CardLayout card = (CardLayout) changingPanel.getLayout();
         card.show(changingPanel, "stationPanel");
     }//GEN-LAST:event_stationBtnActionPerformed
+
+    private void nipFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nipFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nipFieldActionPerformed
+
+    private void createAccBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createAccBtnActionPerformed
+        
+        ResultSet rs;
+        PreparedStatement pst;
+        Statement stmt;
+        
+        NewID noweID = new NewID();
+        int userID = noweID.UstawNumer("kli_id","klient");
+        int placeID = noweID.UstawNumer("adr_id","adres");
+        int companyID = noweID.UstawNumer("fir_id", "firma");
+        
+        String imie = nameField.getText();
+        String nazwisko = surnameField.getText();
+        String haslo = passwordFieldNew.getText();
+        String ulica = streetField.getText();
+        String kodPoczt = kodeField.getText();
+        String miasto = cityField.getText();
+        String email = emailField.getText();
+        String nrtel = numberField.getText();
+        
+        String firma = companyField.getText();
+        String nip = nipField.getText();
+        String regon = regonField.getText();
+        
+        String addClient = "insert into Klient (kli_id, kli_imie, kli_nazwisko, kli_haslo, kli_adres_id, kli_mail, kli_telefon) values"
+                + "('" + userID + "','" + imie + "','" + nazwisko + "','" + haslo + "','" + placeID + "','" + email +"','"
+                + nrtel + "')";
+        
+        String addPlace = "insert into Adres (adr_id, adr_ulica, adr_kod, adr_miasto, adr_klient_id) values"
+                + "('" + placeID + "','" + ulica + "','" + kodPoczt + "','" + miasto + "','" + userID + "')";
+        
+        String addCompany = "insert into Firma (fir_id, fir_nazwa, fir_nip, fir_regon, fir_klient_id) values"
+                + "('" + companyID + "','" + firma + "','" + nip + "','" + regon + "','" + userID + "')";
+        
+        
+        
+        try {
+            conn = DataBase.Connection();
+            stmt = conn.createStatement();
+            
+            if(imie.equals("") || nazwisko.equals("") || haslo.equals("") || email.equals("")) {
+                JOptionPane.showMessageDialog(null, "Uzupełnij wszystkie wymagane dane!");
+                
+            } else {
+            
+                if(firma.equals("") && nip.equals("") && regon.equals("")){
+                    stmt.executeUpdate(addClient);
+                    stmt.executeUpdate(addPlace);
+                    JOptionPane.showMessageDialog(null, "Dodano nowego klienta!");
+                
+                } else if (!firma.equals("") && (nip.equals("") || regon.equals(""))) {
+                    JOptionPane.showMessageDialog(null, "Uzupełnij wszystkie dane dotyczące firmy!");
+                
+                } else if ((firma.equals("") || nip.equals("")) && !regon.equals("")) {
+                    JOptionPane.showMessageDialog(null, "Uzupełnij wszystkie dane dotyczące firmy!");
+                
+                } else if ((firma.equals("") || regon.equals("")) && !nip.equals("")) {
+                    JOptionPane.showMessageDialog(null, "Uzupełnij wszystkie dane dotyczące firmy!");
+                
+                } else {
+                    stmt.executeUpdate(addClient);
+                    stmt.executeUpdate(addPlace);
+                    stmt.executeUpdate(addCompany);
+                    JOptionPane.showMessageDialog(null, "Dodano nowego klienta!");
+                }
+                
+                nameField.setText("");
+                surnameField.setText("");
+                passwordFieldNew.setText("");
+                streetField.setText("");
+                kodeField.setText("");
+                cityField.setText("");
+                emailField.setText("");
+                numberField.setText("");
+        
+                companyField.setText("");
+                nipField.setText("");
+                regonField.setText("");
+                
+                stmt.close();
+                conn.close();
+            }
+            
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Nie udało się dodać rekordu do bazy" + ex);
+        }
+        
+        
+        
+    }//GEN-LAST:event_createAccBtnActionPerformed
+
+    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -504,39 +693,51 @@ public class UserPanel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField PasswordField;
     private javax.swing.JButton aboutBtn;
     private javax.swing.JLabel aboutLabel;
     private javax.swing.JPanel aboutPanel;
     private javax.swing.JPanel changingPanel;
+    private javax.swing.JTextField cityField;
     private javax.swing.JPanel cleanPanel;
+    private javax.swing.JTextField companyField;
     private javax.swing.JButton contactBtn;
     private javax.swing.JPanel contactPanel;
     private javax.swing.JButton createAccBtn;
     private javax.swing.JTextField emailField;
     private javax.swing.JButton fuelBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField kodeField;
     private javax.swing.JButton logBtn;
     private javax.swing.JButton loginBtn;
     private javax.swing.JPanel loginPanel;
     private javax.swing.JButton logoutBtn;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JTextField nameField;
-    private javax.swing.JTextField newPasswordField;
-    private javax.swing.JTextField newUserField;
-    private javax.swing.JTextField passwordField;
+    private javax.swing.JTextField nipField;
+    private javax.swing.JTextField numberField;
+    private javax.swing.JPasswordField passwordFieldNew;
+    private javax.swing.JLabel phoneField;
     private javax.swing.JPanel registerPanel;
     private javax.swing.JButton registrationBtn;
+    private javax.swing.JTextField regonField;
     private javax.swing.JButton stationBtn;
     private javax.swing.JPanel stationPanel;
+    private javax.swing.JTextField streetField;
     private javax.swing.JTextField surnameField;
     private javax.swing.JTextField userNameField;
     private javax.swing.JLabel warnLabel;

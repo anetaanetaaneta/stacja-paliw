@@ -100,6 +100,8 @@ public class AdminPanel extends javax.swing.JFrame {
         washItem = new javax.swing.JMenuItem();
         cameraMenu = new javax.swing.JMenu();
         cameraItem = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        logoffItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -434,6 +436,18 @@ public class AdminPanel extends javax.swing.JFrame {
 
         jMenuBar1.add(cameraMenu);
 
+        jMenu1.setText("Wyloguj");
+
+        logoffItem.setText("Wyloguj z panelu administracyjnego");
+        logoffItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoffItemActionPerformed(evt);
+            }
+        });
+        jMenu1.add(logoffItem);
+
+        jMenuBar1.add(jMenu1);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -454,7 +468,29 @@ public class AdminPanel extends javax.swing.JFrame {
 
     private void klientsItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_klientsItemActionPerformed
         CardLayout card = (CardLayout) changingPanel2.getLayout();
-        card.show(changingPanel2, "klienciCard");        
+        card.show(changingPanel2, "klienciCard");
+        
+        FillTable uzupelnij = new FillTable();
+
+        uzupelnij.ClearTable(clientsTable);
+        
+        String wybierzKlientow = "select kli_id, kli_imie, kli_nazwisko, kli_mail, kli_telefon, adr_ulica, adr_kod, "
+                + "adr_miasto from klient, adres where kli_id=adr_klient_id and adr_id=kli_adres_id";
+
+        try {
+            Connection conn = DataBase.Connection();
+            pst = conn.prepareStatement(wybierzKlientow);
+            rs = pst.executeQuery();
+            
+            uzupelnij.FillClients(clientsTable, rs);
+            pst.close(); rs.close();
+            
+            conn.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Błąd w AdminPanel: " + ex);
+        }
+        
     }//GEN-LAST:event_klientsItemActionPerformed
 
     private void newMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newMenuMouseClicked
@@ -616,6 +652,31 @@ public class AdminPanel extends javax.swing.JFrame {
         CardLayout card = (CardLayout) changingPanel2.getLayout();
         card.show(changingPanel2, "companyPanel");
         
+        FillTable uzupelnij = new FillTable();
+        ResultSet rs2;
+        PreparedStatement pst2;
+        Statement stmt;
+
+        uzupelnij.ClearTable(CompanyTable);
+        
+        String wybierzFirmy = "select fir_id, fir_nazwa, fir_nip, fir_regon, fir_klient_id, kli_imie, kli_nazwisko from "
+                + "Firma, klient where fir_klient_id=kli_id";
+            
+        try {
+            Connection conn = DataBase.Connection();
+
+            pst2 = conn.prepareStatement(wybierzFirmy);
+            rs2 = pst2.executeQuery();
+            
+            uzupelnij.FillCompany(CompanyTable, rs2);
+            pst2.close(); rs2.close();
+            
+            conn.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Błąd w AdminPanel: " + ex);
+        }
+        
     }//GEN-LAST:event_companyItemActionPerformed
 
     private void newKlientItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newKlientItemActionPerformed
@@ -699,7 +760,7 @@ public class AdminPanel extends javax.swing.JFrame {
         String wybierzKlientow = "select kli_id, kli_imie, kli_nazwisko, kli_mail, kli_telefon, adr_ulica, adr_kod, "
                 + "adr_miasto from klient, adres where kli_id=adr_klient_id and adr_id=kli_adres_id";
         
-        FillTable uzupelnij = new FillTable();
+        //FillTable uzupelnij = new FillTable();
         
         
         try {
@@ -726,7 +787,7 @@ public class AdminPanel extends javax.swing.JFrame {
             rs2 = pst2.executeQuery();
             
             
-                if(rs.next()) {
+                if(rs2.next()) {
                     stmt.executeUpdate(updateCompany);
                     rs2.close();
                 } else {
@@ -737,13 +798,13 @@ public class AdminPanel extends javax.swing.JFrame {
             }
             pst2.close();
             
-            pst3 = conn.prepareStatement(wybierzKlientow);
-            rs3 = pst3.executeQuery();
+            //pst3 = conn.prepareStatement(wybierzKlientow);
+            //rs3 = pst3.executeQuery();
             
-            uzupelnij.ClearTable(clientsTable);
-            uzupelnij.FillCompany(clientsTable, rs3);
+            //uzupelnij.ClearTable(clientsTable);
+            //uzupelnij.FillCompany(clientsTable, rs3);
             
-            rs3.close(); pst3.close();
+            //rs3.close(); pst3.close();
             stmt.close();
             conn.close();
             
@@ -762,6 +823,7 @@ public class AdminPanel extends javax.swing.JFrame {
         
         Statement stmt;
         FillTable uzupelnij = new FillTable();
+        PreparedStatement pst2; ResultSet rs2;
         
         int index = clientsTable.getSelectedRow();
         String nr_id = (String) clientsTable.getValueAt(index, 0);
@@ -773,6 +835,9 @@ public class AdminPanel extends javax.swing.JFrame {
         String wybierzKlientow = "select kli_id, kli_imie, kli_nazwisko, kli_mail, kli_telefon, adr_ulica, adr_kod, "
                 + "adr_miasto from klient, adres where kli_id=adr_klient_id and adr_id=kli_adres_id";
         
+        String wybierzFirmy = "select fir_id, fir_nazwa, fir_nip, fir_regon, fir_klient_id, kli_imie, kli_nazwisko from "
+                + "Firma, klient  where fir_klient_id=kli_id";
+        
         try {
             Connection conn = DataBase.Connection();
             stmt = conn.createStatement();
@@ -783,10 +848,16 @@ public class AdminPanel extends javax.swing.JFrame {
             stmt.executeUpdate(usunFirme);
             stmt.executeUpdate(usunAdres);
             
-            uzupelnij.ClearTable(clientsTable);
-            uzupelnij.FillCompany(clientsTable, rs);
+            pst2 = conn.prepareStatement(wybierzFirmy);
+            rs2 = pst2.executeQuery();
             
-            stmt.close(); pst.close(); rs.close();
+            uzupelnij.ClearTable(clientsTable);
+            uzupelnij.FillClients(clientsTable, rs);
+            uzupelnij.ClearTable(CompanyTable);
+            uzupelnij.FillCompany(CompanyTable,rs2);
+            
+            stmt.close(); pst2.close(); rs2.close();
+            pst.close(); rs.close();
             conn.close();
             
             JOptionPane.showMessageDialog(null, "Usunięto dane z bazy");
@@ -797,7 +868,14 @@ public class AdminPanel extends javax.swing.JFrame {
         
     }//GEN-LAST:event_deleteBtnActionPerformed
 
-    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+    private void logoffItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoffItemActionPerformed
+        dispose();
+        
+        UserPanel newPanel = new UserPanel();
+        newPanel.setVisible(true);
+    }//GEN-LAST:event_logoffItemActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
 
         FillTable uzupelnij = new FillTable();
         ResultSet rs2;
@@ -899,12 +977,14 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel klienciCard;
     private javax.swing.JMenuItem klientsItem;
     private javax.swing.JMenuItem listItem;
+    private javax.swing.JMenuItem logoffItem;
     private javax.swing.JMenu loyProgMenu;
     private javax.swing.JTextField newAddressField;
     private javax.swing.JTextField newCityField;

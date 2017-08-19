@@ -27,17 +27,14 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="mainPanel" min="-2" pref="979" max="-2" attributes="0"/>
+              <Component id="mainPanel" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="mainPanel" min="-2" pref="618" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
+          <Component id="mainPanel" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -64,7 +61,7 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="changingPanel" max="32767" attributes="0"/>
+                  <Component id="changingPanel" pref="1020" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -83,7 +80,6 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="changingPanel" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -170,7 +166,7 @@
                                   <Component id="logBtn" min="-2" pref="113" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="172" max="32767" attributes="0"/>
+                          <EmptySpace pref="233" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -205,7 +201,7 @@
                               <Component id="jLabel3" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                               <Component id="registrationBtn" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="337" max="32767" attributes="0"/>
+                          <EmptySpace pref="340" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -270,14 +266,31 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="221" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="168" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
+                                  <Component id="jLabel52" min="-2" pref="452" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
+                                  <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="260" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                          <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="241" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -285,9 +298,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel5" min="-2" pref="234" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel52" min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" pref="129" max="-2" attributes="0"/>
-                          <EmptySpace pref="164" max="32767" attributes="0"/>
+                          <Component id="jLabel54" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel55" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="174" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -300,42 +319,41 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea2">
-                      <Properties>
-                        <Property name="editable" type="boolean" value="false"/>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="f0" green="f0" red="f0" type="rgb"/>
-                        </Property>
-                        <Property name="columns" type="int" value="20"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Calibri" size="18" style="0"/>
-                        </Property>
-                        <Property name="lineWrap" type="boolean" value="true"/>
-                        <Property name="rows" type="int" value="5"/>
-                        <Property name="text" type="java.lang.String" value="Witaj Drogi Kliencie w aplikacji tacji Paliw SPB&#xa;Aplikacja ta pozowli Ci na czerpanie dodatkowych korzy&#x15b;ci z naszych us&#x142;ug poprzez program lojalno&#x15b;ciowy.&#xa;Zbieraj punkty i wymieniaj je na darmowe paliwo b&#x105;d&#x17a; mycie.&#xa;Aby do&#x142;&#x105;czy&#x107; do programu lojalno&#x15b;ciowego zarejestruj si&#x119;!"/>
-                        <Property name="autoscrolls" type="boolean" value="false"/>
-                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                          <Border info="null"/>
-                        </Property>
-                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Text Cursor"/>
-                        </Property>
-                        <Property name="focusable" type="boolean" value="false"/>
-                        <Property name="highlighter" type="javax.swing.text.Highlighter" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                          <ComponentRef name="null"/>
-                        </Property>
-                        <Property name="opaque" type="boolean" value="false"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
+                <Component class="javax.swing.JLabel" name="jLabel52">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="18" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Witaj Drogi Kliencie w aplikacji Stacji Paliw SPB"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel53">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Aplikacja ta pozwoli Ci na czerpanie dodatkowych korzy&#x15b;ci z naszych us&#x142;uch poprzez program lojalno&#x15b;ciowy."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel54">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Zbieraj punkty i wymieniaj je na darmowe paliwo b&#x105;d&#x17a; mycie."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel55">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Aby do&#x142;&#x105;czy&#x107; do programu lojalno&#x15b;ciowego zarejestruj si&#x119;!"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="stationPanel">
@@ -352,66 +370,105 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel11" min="-2" pref="125" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                                          </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
+                                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
-                                                          <Group type="102" alignment="0" attributes="0">
-                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                              </Group>
-                                                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                                  <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
-                                                                  <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
-                                                              </Group>
+                                                          <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="lpgPktLabel" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="32767" attributes="0"/>
+                                                              <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="onPktLabel" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Component id="jLabel43" min="-2" max="-2" attributes="0"/>
                                                           </Group>
                                                       </Group>
                                                   </Group>
+                                                  <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel19" min="-2" pref="173" max="-2" attributes="0"/>
-                                                          <Component id="jLabel20" min="-2" pref="191" max="-2" attributes="0"/>
-                                                      </Group>
+                                                      <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="lpgPoints" min="-2" pref="15" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel19" min="-2" pref="173" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="e95Points" min="-2" pref="14" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                              <Component id="jLabel11" min="-2" pref="125" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
+                                                          <Group type="102" attributes="0">
+                                                              <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="e98Points" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Component id="jLabel21" min="-2" pref="178" max="-2" attributes="0"/>
+                                                          <Group type="102" alignment="0" attributes="0">
+                                                              <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace max="-2" attributes="0"/>
+                                                              <Component id="washPoints" min="-2" max="-2" attributes="0"/>
+                                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                              <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
+                                                          </Group>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
                                                       <Component id="jLabel17" min="-2" pref="150" max="-2" attributes="0"/>
                                                       <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jLabel21" min="-2" pref="178" max="-2" attributes="0"/>
-                                                          <Component id="jLabel28" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                                                  </Group>
                                               </Group>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                                                   <Component id="jLabel23" min="-2" pref="169" max="-2" attributes="0"/>
                                                   <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="waxPoints" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jLabel42" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="onPoints" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jLabel41" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
@@ -422,8 +479,16 @@
                                               </Group>
                                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel39" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="waxPktLabel" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jLabel46" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <Component id="washPktLabel" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                      <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -438,7 +503,7 @@
                                   <Component id="jLabel31" min="-2" pref="405" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="109" max="32767" attributes="0"/>
+                          <EmptySpace pref="183" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -462,6 +527,12 @@
                               <Component id="jLabel20" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
                               <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="e95Points" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="e98Points" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="onPoints" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -474,24 +545,34 @@
                               <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lpgPoints" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="washPoints" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="waxPoints" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel42" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                           <Component id="jLabel31" min="-2" pref="37" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="onPktLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="washPktLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel43" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel45" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lpgPktLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="waxPktLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel46" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="64" max="32767" attributes="0"/>
+                          <EmptySpace pref="67" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -528,7 +609,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel20">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Punkty lojalno&#x15b;ciowe: 2pkt/l"/>
+                    <Property name="text" type="java.lang.String" value="Punkty lojalno&#x15b;ciowe:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel21">
@@ -541,7 +622,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel22">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Punkty lojalno&#x15b;ciowe: 2pkt/l"/>
+                    <Property name="text" type="java.lang.String" value="Punkty lojalno&#x15b;ciowe: "/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel23">
@@ -554,7 +635,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel24">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Punkty lojalno&#x15b;ciowe: 2pkt/l"/>
+                    <Property name="text" type="java.lang.String" value="Punkty lojalno&#x15b;ciowe: "/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel25">
@@ -567,7 +648,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel26">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Punkty lojalno&#x15b;ciowe: 1pkt/l"/>
+                    <Property name="text" type="java.lang.String" value="Punkty lojalno&#x15b;ciowe: "/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel27">
@@ -580,7 +661,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel28">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Punkty lojalno&#x15b;ciowe: 10pkt"/>
+                    <Property name="text" type="java.lang.String" value="Punkty lojalno&#x15b;ciowe: "/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel29">
@@ -593,7 +674,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel30">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Punkty lojalno&#x15b;ciowe: 5pkt"/>
+                    <Property name="text" type="java.lang.String" value="Punkty lojalno&#x15b;ciowe: "/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel31">
@@ -615,7 +696,7 @@
                     <Property name="text" type="java.lang.String" value="benzyna/ON"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel33">
+                <Component class="javax.swing.JLabel" name="onPktLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="18" style="0"/>
@@ -623,8 +704,11 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="100 pkt/l"/>
+                    <Property name="text" type="java.lang.String" value="100"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel34">
                   <Properties>
@@ -634,7 +718,7 @@
                     <Property name="text" type="java.lang.String" value="LPG"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel35">
+                <Component class="javax.swing.JLabel" name="lpgPktLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="18" style="0"/>
@@ -642,8 +726,11 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="50 pkt/l"/>
+                    <Property name="text" type="java.lang.String" value="50"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel36">
                   <Properties>
@@ -661,7 +748,7 @@
                     <Property name="text" type="java.lang.String" value="Mycie z woskowaniem"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel38">
+                <Component class="javax.swing.JLabel" name="washPktLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="18" style="0"/>
@@ -669,18 +756,146 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="300 pkt"/>
+                    <Property name="text" type="java.lang.String" value="300"/>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="waxPktLabel">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="18" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="400"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="e95Points">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="2"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel33">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="pkt/l"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lpgPoints">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="1"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel35">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="pkt/l"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="e98Points">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="2"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel38">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="pkt/l"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="washPoints">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="10"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel39">
                   <Properties>
+                    <Property name="text" type="java.lang.String" value="pkt"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="onPoints">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="2"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel41">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="pkt/l"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="waxPoints">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="5"/>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel42">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="pkt"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel43">
+                  <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Tahoma" size="18" style="0"/>
                     </Property>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="0" green="0" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="400 pkt"/>
+                    <Property name="text" type="java.lang.String" value="pkt/l"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel44">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="18" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="pkt/l"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel45">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="18" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="pkt"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel46">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="18" style="0"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="pkt"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -695,10 +910,24 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="aboutLabel" min="-2" pref="104" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="aboutLabel" min="-2" pref="581" max="-2" attributes="0"/>
-                          <EmptySpace pref="360" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                          <Component id="jLabel56" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="159" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -706,8 +935,12 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="aboutLabel" min="-2" pref="207" max="-2" attributes="0"/>
-                          <EmptySpace pref="320" max="32767" attributes="0"/>
+                          <Component id="aboutLabel" min="-2" pref="37" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="116" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel56" min="-2" pref="342" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -715,8 +948,48 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="aboutLabel">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Info o  blah blah blah"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="24" style="1"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="0" green="0" red="ff" type="rgb"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="SPB SA"/>
                     <Property name="verticalAlignment" type="int" value="1"/>
+                  </Properties>
+                </Component>
+                <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                  <AuxValues>
+                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                  </AuxValues>
+
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <SubComponents>
+                    <Component class="javax.swing.JTextArea" name="aboutTextArea">
+                      <Properties>
+                        <Property name="editable" type="boolean" value="false"/>
+                        <Property name="columns" type="int" value="20"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Tahoma" size="14" style="0"/>
+                        </Property>
+                        <Property name="lineWrap" type="boolean" value="true"/>
+                        <Property name="rows" type="int" value="5"/>
+                        <Property name="text" type="java.lang.String" value="Jeste&#x15b;my mi&#x119;dzynarodow&#x105; grup&#x105; kapita&#x142;ow&#x105; z bran&#x17c;y paliwowo-energetycznej, od pi&#x119;ciu lat nieprzerwanie uznawan&#x105; za najcenniejsz&#x105; polsk&#x105; mark&#x119;.&#xa;Jeste&#x15b;my liderem list najwi&#x119;kszych firm w Polsce wg &#x201e;Polityki&#x201d; i &#x201e;Rzeczpospolitej&#x201d;. Od dw&#xf3;ch lat jeste&#x15b;my w gronie najbardziej etycznych przedsi&#x119;biorstw na &#x15b;wiecie, wy&#x142;anianych przez ameryka&#x144;ski Ethisphere Institute.&#xa;Pozostajemy r&#xf3;wnie&#x17c; najbardziej po&#x17c;&#x105;danym pracodawc&#x105; w kraju, a standardy polityki personalnej koncernu potwierdza przyznany ju&#x17c; po raz czwarty certyfikat Top Employers Polska.&#xa;Nasza Sp&#xf3;&#x142;ka od siedemnastu lat jest notowana na Gie&#x142;dzie Papier&#xf3;w Warto&#x15b;ciowych w Warszawie. Jako Grupa SPB zarz&#x105;dzamy sze&#x15b;cioma rafineriami i najwi&#x119;ksz&#x105; sieci&#x105; 2 700 stacji paliw w Europie &#x15a;rodkowej (Polska, Niemcy, Czechy i Litwa). Zapleczem sieci detalicznej jest efektywna infrastruktura logistyczna, sk&#x142;adaj&#x105;ca si&#x119; z naziemnych i podziemnych baz magazynowych oraz sieci ruroci&#x105;g&#xf3;w dalekosi&#x119;&#x17c;nych. &#xa;"/>
+                        <Property name="wrapStyleWord" type="boolean" value="true"/>
+                        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                          <Border info="null"/>
+                        </Property>
+                        <Property name="opaque" type="boolean" value="false"/>
+                        <Property name="requestFocusEnabled" type="boolean" value="false"/>
+                      </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Component class="javax.swing.JLabel" name="jLabel56">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/images/stacjapaliw.png"/>
+                    </Property>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -731,10 +1004,24 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel4" min="-2" pref="156" max="-2" attributes="0"/>
-                          <EmptySpace pref="793" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" min="-2" pref="156" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel49" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel50" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel51" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace pref="821" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -743,7 +1030,17 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" pref="36" max="-2" attributes="0"/>
-                          <EmptySpace pref="477" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel47" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel48" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel49" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="345" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -751,7 +1048,50 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel4">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Dane kontaktowe firmy"/>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Biuro w Krakowie"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel47">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Stacja Paliw SPB SA"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel48">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Aleja 11 Listopada 45"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel49">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="28-656 Krak&#xf3;w"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel50">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="Tel: +48 22 745 698 00 00"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel51">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Tahoma" size="14" style="0"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="E-mail: spbsa@firma.pl"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -824,7 +1164,7 @@
                                       <Component id="streetField" alignment="0" max="32767" attributes="0"/>
                                       <Component id="regonField" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="0" pref="103" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="164" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -994,7 +1334,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel40" min="-2" pref="112" max="-2" attributes="0"/>
-                          <EmptySpace pref="837" max="32767" attributes="0"/>
+                          <EmptySpace pref="898" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1003,7 +1343,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                           <Component id="jLabel40" min="-2" pref="37" max="-2" attributes="0"/>
-                          <EmptySpace pref="471" max="32767" attributes="0"/>
+                          <EmptySpace pref="474" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>

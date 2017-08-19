@@ -41,6 +41,11 @@ public class AdminPanel extends javax.swing.JFrame {
 
         });
         
+        idCompLabel.setVisible(false);
+        jLabel12.setVisible(false);
+        hasloLabel.setVisible(false);
+        hasloField.setVisible(false);
+        
     }
 
     /**
@@ -83,11 +88,52 @@ public class AdminPanel extends javax.swing.JFrame {
         editUserBtn = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         idLabel = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        idCompLabel = new javax.swing.JLabel();
+        hasloLabel = new javax.swing.JLabel();
+        hasloField = new javax.swing.JPasswordField();
         companyPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         CompanyTable = new javax.swing.JTable();
         editCompanyBtn = new javax.swing.JButton();
         deleteCompanyBtn = new javax.swing.JButton();
+        programPanel = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        tank95Field = new javax.swing.JTextField();
+        tank98Field = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        tankONField = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        tankowanieelpegie = new javax.swing.JLabel();
+        tankLPGField = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        mycieField = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        woskField = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        changePointsBtn = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        benzPointsField = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        lpgPointsField = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        washField = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        waxField = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        changePoints2Btn = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         newMenu = new javax.swing.JMenu();
         klientsItem = new javax.swing.JMenuItem();
@@ -95,7 +141,6 @@ public class AdminPanel extends javax.swing.JFrame {
         newKlientItem = new javax.swing.JMenuItem();
         loyProgMenu = new javax.swing.JMenu();
         rulesItem = new javax.swing.JMenuItem();
-        listItem = new javax.swing.JMenuItem();
         washMenu = new javax.swing.JMenu();
         washItem = new javax.swing.JMenuItem();
         cameraMenu = new javax.swing.JMenu();
@@ -215,6 +260,10 @@ public class AdminPanel extends javax.swing.JFrame {
 
         jLabel11.setText("Numer ID klienta");
 
+        jLabel12.setText("Numer ID firmy");
+
+        hasloLabel.setText("Hasło");
+
         javax.swing.GroupLayout newClientPanelLayout = new javax.swing.GroupLayout(newClientPanel);
         newClientPanel.setLayout(newClientPanelLayout);
         newClientPanelLayout.setHorizontalGroup(
@@ -251,10 +300,17 @@ public class AdminPanel extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addComponent(editUserBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(124, 124, 124)
-                .addComponent(jLabel11)
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12)
+                    .addComponent(hasloLabel))
                 .addGap(18, 18, 18)
-                .addComponent(idLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(439, Short.MAX_VALUE))
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(idLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
+                        .addComponent(idCompLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(hasloField, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(316, Short.MAX_VALUE))
         );
         newClientPanelLayout.setVerticalGroup(
             newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,14 +321,23 @@ public class AdminPanel extends javax.swing.JFrame {
                     .addComponent(newNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
                     .addComponent(idLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(newSurnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(newClientPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(newSurnameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(newClientPanelLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(idCompLabel))))
                 .addGap(18, 18, 18)
                 .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(newCompanyField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(newCompanyField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hasloLabel)
+                    .addComponent(hasloField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -346,6 +411,11 @@ public class AdminPanel extends javax.swing.JFrame {
         });
 
         deleteCompanyBtn.setText("Usuń");
+        deleteCompanyBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteCompanyBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout companyPanelLayout = new javax.swing.GroupLayout(companyPanel);
         companyPanel.setLayout(companyPanelLayout);
@@ -373,6 +443,238 @@ public class AdminPanel extends javax.swing.JFrame {
         );
 
         changingPanel2.add(companyPanel, "companyPanel");
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setText("Poniżej podano ilość punktów, którą klienci otrzymują za tankowanie bądź mycie w ramach programu lojalnościowego stacji.");
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setText("Tankowanie");
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel15.setText("95");
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel16.setText("98");
+
+        tank95Field.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tank95FieldActionPerformed(evt);
+            }
+        });
+
+        jLabel17.setText("pkt/l");
+
+        jLabel18.setText("pkt/l");
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel19.setText("ON");
+
+        jLabel20.setText("pkt/l");
+
+        tankowanieelpegie.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tankowanieelpegie.setForeground(new java.awt.Color(255, 0, 0));
+        tankowanieelpegie.setText("LPG");
+
+        jLabel21.setText("pkt/l");
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel22.setText("Mycie");
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel23.setText("Mycie standardowe");
+
+        jLabel24.setText("pkt");
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel25.setText("Mycie z woskowaniem");
+
+        jLabel26.setText("pkt");
+
+        changePointsBtn.setText("Zmień");
+        changePointsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changePointsBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel27.setText("Poniżej podano ilość punktów, które klienci muszą uzyskać, aby móc skorzystać z darmowych usług w ramach programu lojalnościowego.");
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel28.setText("benzyna/ON");
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel29.setText("LPG");
+
+        jLabel30.setText("pkt/l");
+
+        jLabel31.setText("pkt/l");
+
+        jLabel32.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel32.setText("Mycie standardowe");
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel33.setText("Mycie z woskowaniem");
+
+        jLabel34.setText("pkt");
+
+        jLabel35.setText("pkt");
+
+        changePoints2Btn.setText("Zmień");
+        changePoints2Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changePoints2BtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout programPanelLayout = new javax.swing.GroupLayout(programPanel);
+        programPanel.setLayout(programPanelLayout);
+        programPanelLayout.setHorizontalGroup(
+            programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(programPanelLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 873, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(programPanelLayout.createSequentialGroup()
+                        .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addGroup(programPanelLayout.createSequentialGroup()
+                                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel19)
+                                    .addComponent(tankowanieelpegie))
+                                .addGap(22, 22, 22)
+                                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tank95Field)
+                                    .addComponent(tank98Field)
+                                    .addComponent(tankONField)
+                                    .addComponent(tankLPGField, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel21))))
+                        .addGap(286, 286, 286)
+                        .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addGroup(programPanelLayout.createSequentialGroup()
+                                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel23))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(mycieField)
+                                    .addComponent(woskField, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel24)
+                                    .addComponent(jLabel26)))
+                            .addComponent(changePointsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel27)
+                    .addGroup(programPanelLayout.createSequentialGroup()
+                        .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel28)
+                            .addComponent(jLabel29))
+                        .addGap(37, 37, 37)
+                        .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(benzPointsField)
+                            .addComponent(lpgPointsField, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel30)
+                            .addComponent(jLabel31))
+                        .addGap(223, 223, 223)
+                        .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(programPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel33)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(waxField, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel35))
+                            .addGroup(programPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel32)
+                                .addGap(25, 25, 25)
+                                .addComponent(washField, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel34))
+                            .addComponent(changePoints2Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(211, Short.MAX_VALUE))
+        );
+        programPanelLayout.setVerticalGroup(
+            programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(programPanelLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel22))
+                .addGap(18, 18, 18)
+                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(tank95Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel23)
+                    .addComponent(mycieField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24))
+                .addGap(32, 32, 32)
+                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(tank98Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel25)
+                    .addComponent(woskField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel26))
+                .addGap(28, 28, 28)
+                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(tankONField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20))
+                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(programPanelLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tankowanieelpegie)
+                            .addComponent(tankLPGField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel21)))
+                    .addGroup(programPanelLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(changePointsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(benzPointsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel32)
+                    .addComponent(washField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel34))
+                .addGap(25, 25, 25)
+                .addGroup(programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(lpgPointsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel33)
+                    .addComponent(waxField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel35))
+                .addGap(28, 28, 28)
+                .addComponent(changePoints2Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
+
+        changingPanel2.add(programPanel, "programPanel");
 
         newMenu.setText("Klienci");
         newMenu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -415,10 +717,12 @@ public class AdminPanel extends javax.swing.JFrame {
         loyProgMenu.setText("Program lojalnościowy");
 
         rulesItem.setText("Zasady programu");
+        rulesItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rulesItemActionPerformed(evt);
+            }
+        });
         loyProgMenu.add(rulesItem);
-
-        listItem.setText("Lista uczestników programu");
-        loyProgMenu.add(listItem);
 
         jMenuBar1.add(loyProgMenu);
 
@@ -573,7 +877,7 @@ public class AdminPanel extends javax.swing.JFrame {
         
         String imie = newNameField.getText();
         String nazwisko = newSurnameField.getText();
-        //String haslo = newPswordFieldNew.getText();
+        String haslo = hasloField.getText();
         String ulica = newAddressField.getText();
         String kodPoczt = newCodeField.getText();
         String miasto = newCityField.getText();
@@ -584,9 +888,9 @@ public class AdminPanel extends javax.swing.JFrame {
         String nip = newNIPField.getText();
         String regon = newRegonField.getText();
         
-        String addClient = "insert into Klient (kli_id, kli_imie, kli_nazwisko, kli_adres_id, kli_mail, kli_telefon) values"
+        String addClient = "insert into Klient (kli_id, kli_imie, kli_nazwisko, kli_adres_id, kli_mail, kli_telefon, kli_haslo) values"
                 + "('" + userID + "','" + imie + "','" + nazwisko + "','" + placeID + "','" + email +"','"
-                + nrtel + "')";
+                + nrtel + "',')" + haslo + "')";
         
         String addPlace = "insert into Adres (adr_id, adr_ulica, adr_kod, adr_miasto, adr_klient_id) values"
                 + "('" + placeID + "','" + ulica + "','" + kodPoczt + "','" + miasto + "','" + userID + "')";
@@ -600,7 +904,7 @@ public class AdminPanel extends javax.swing.JFrame {
             conn = DataBase.Connection();
             stmt = conn.createStatement();
             
-            if(imie.equals("") || nazwisko.equals("") || email.equals("")) {
+            if(imie.equals("") || nazwisko.equals("") || email.equals("") || haslo.equals("")) {
                 JOptionPane.showMessageDialog(null, "Uzupełnij wszystkie wymagane dane!");
                 
             } else {
@@ -628,6 +932,7 @@ public class AdminPanel extends javax.swing.JFrame {
                 
                 newNameField.setText("");
                 newSurnameField.setText("");
+                hasloField.setText("");
                 
                 newAddressField.setText("");
                 newCodeField.setText("");
@@ -685,6 +990,8 @@ public class AdminPanel extends javax.swing.JFrame {
 
         editUserBtn.setVisible(false);
         newUserBtn.setVisible(true);
+        hasloLabel.setVisible(true);
+        hasloField.setVisible(true);
         
         newNameField.setText("");
         newSurnameField.setText("");
@@ -696,13 +1003,11 @@ public class AdminPanel extends javax.swing.JFrame {
         newCompanyField.setText("");
         newNIPField.setText("");
         newRegonField.setText("");
+        hasloField.setText("");
         
     }//GEN-LAST:event_newKlientItemActionPerformed
 
     private void editUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editUserBtnActionPerformed
-        
-        klienciCard.setEnabled(false);
-        clientsTable.setEnabled(false);
         
         String idkli = idLabel.getText(),
                 imie = null, nazwisko = null, ulica = null, kodPoczt = null, miasto = null, 
@@ -739,7 +1044,7 @@ public class AdminPanel extends javax.swing.JFrame {
         
         String findAddress = "select * from Adres where adr_klient_id=" + idkli;
         
-        String findCompany = "select * from Firma where fir_klient_id=" +idkli;
+        String findCompany = "select * from Firma where fir_klient_id=" + idkli;
         
         String updateAddress = "update Adres set adr_ulica='" + ulica + "', adr_kod='" + kodPoczt +
                 "', adr_miasto='" + miasto +"' where adr_klient_id=" + idkli;
@@ -756,13 +1061,7 @@ public class AdminPanel extends javax.swing.JFrame {
         
         String newCompany = "insert into Firma (fir_id, fir_nip, fir_regon, fir_nazwa, fir_klient_id) values ('"
                 + compID +"','" + nip + "','" + regon + "','" + firma + "','" + idkli + "')"; 
-        
-        String wybierzKlientow = "select kli_id, kli_imie, kli_nazwisko, kli_mail, kli_telefon, adr_ulica, adr_kod, "
-                + "adr_miasto from klient, adres where kli_id=adr_klient_id and adr_id=kli_adres_id";
-        
-        //FillTable uzupelnij = new FillTable();
-        
-        
+
         try {
             Connection conn = DataBase.Connection();
 
@@ -771,40 +1070,38 @@ public class AdminPanel extends javax.swing.JFrame {
             rs = pst.executeQuery();
             
             stmt.executeUpdate(updateClient);
-            
-            
+
                 if(rs.next()){
                     stmt.executeUpdate(updateAddress);
                     rs.close();
+                    //JOptionPane.showMessageDialog(null, "Zaktualizowano adres");
                 } else {
-                    if(!(newAddressField.equals("")) || !(newCodeField.equals("")) || !(newCityField.equals(""))) {
+                    if(!(newAddressField.getText().equals("")) || !(newCodeField.getText().equals("")) || 
+                            !(newCityField.getText().equals(""))) {
                     stmt.executeUpdate(newAddress);
                     rs.close();
+                    JOptionPane.showMessageDialog(null, "Dodano nowy adres do klienta");
                 }
             }
             pst.close();
+            
             pst2 = conn.prepareStatement(findCompany);
             rs2 = pst2.executeQuery();
-            
-            
+
                 if(rs2.next()) {
                     stmt.executeUpdate(updateCompany);
                     rs2.close();
+                    //JOptionPane.showMessageDialog(null, "Zaktualizowano dane firmy");
                 } else {
-                    if(!(newCompanyField.equals("")) || !(newNIPField.equals("")) || !(newRegonField.equals(""))) {
+                    if(!(newCompanyField.getText().equals("")) || !(newNIPField.getText().equals("")) 
+                            || !(newRegonField.getText().equals(""))) {
                     stmt.executeUpdate(newCompany);
                     rs2.close();
+                    JOptionPane.showMessageDialog(null, "Dodano nową firmę do klienta");
                 }
             }
             pst2.close();
-            
-            //pst3 = conn.prepareStatement(wybierzKlientow);
-            //rs3 = pst3.executeQuery();
-            
-            //uzupelnij.ClearTable(clientsTable);
-            //uzupelnij.FillCompany(clientsTable, rs3);
-            
-            //rs3.close(); pst3.close();
+
             stmt.close();
             conn.close();
             
@@ -816,7 +1113,69 @@ public class AdminPanel extends javax.swing.JFrame {
     }//GEN-LAST:event_editUserBtnActionPerformed
 
     private void editCompanyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editCompanyBtnActionPerformed
-        // TODO add your handling code here:
+        
+        int index = CompanyTable.getSelectedRow();
+        System.out.println("Wybrany index" + index);
+        
+        String idFir = (String) CompanyTable.getValueAt(index, 0);
+        String nazwaFir = (String) CompanyTable.getValueAt(index, 1);
+        String nipFir = (String) CompanyTable.getValueAt(index, 2);
+        String regonFir = (String) CompanyTable.getValueAt(index, 3);
+        String idKli = (String) CompanyTable.getValueAt(index, 5);
+        
+        String imie = "", nazwisko = "", email = "", telefon = "", ulica = "", miasto = "", kod = ""; 
+        
+        String selectWla = "select * from klient, adres, firma where kli_id=" + idKli + " and kli_id=adr_klient_id "
+                + "and kli_id=fir_klient_id";
+        
+        try {
+            Connection conn = DataBase.Connection();
+            
+            pst = conn.prepareStatement(selectWla);
+            rs = pst.executeQuery();
+            
+            if(rs.next()) {
+                imie = rs.getString("kli_imie");
+                nazwisko = rs.getString("kli_nazwisko");
+                email = rs.getString("kli_mail");
+                telefon = rs.getString("kli_telefon");
+                ulica = rs.getString("adr_ulica");
+                kod = rs.getString("adr_kod");
+                miasto = rs.getString("adr_miasto");
+            }
+            
+            pst.close(); rs.close(); conn.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Błąd w wyszukaniu firmy dla podanego klienta " + ex);
+        }
+        
+        if(evt.getSource()== editCompanyBtn) {
+            CardLayout card = (CardLayout) changingPanel2.getLayout();
+            card.show(changingPanel2, "newClientPanel");
+            
+            newUserBtn.setVisible(false);
+            
+            idCompLabel.setText(idFir);
+            idLabel.setText(idKli);
+            newNameField.setText(imie);
+            newSurnameField.setText(nazwisko);
+            newMailField.setText(email);
+            newPhoneField.setText(telefon);
+            newAddressField.setText(ulica);
+            newCodeField.setText(kod);
+            newCityField.setText(miasto);
+            newCompanyField.setText(nazwaFir);
+            newNIPField.setText(nipFir);
+            newRegonField.setText(regonFir);
+            
+            editUserBtn.setVisible(true);
+            idCompLabel.setVisible(false);
+            jLabel12.setVisible(false);
+        }
+        
+        
+        
     }//GEN-LAST:event_editCompanyBtnActionPerformed
 
     private void deleteBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBtnActionPerformed
@@ -874,6 +1233,142 @@ public class AdminPanel extends javax.swing.JFrame {
         UserPanel newPanel = new UserPanel();
         newPanel.setVisible(true);
     }//GEN-LAST:event_logoffItemActionPerformed
+
+    private void deleteCompanyBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCompanyBtnActionPerformed
+        
+        Statement stmt;
+        FillTable uzupelnij = new FillTable();
+
+        int index = CompanyTable.getSelectedRow();
+        String nr_id = (String) CompanyTable.getValueAt(index, 0);
+
+        String usunFirme = "delete from firma where fir_id=" + nr_id;
+
+        String wybierzFirmy = "select fir_id, fir_nazwa, fir_nip, fir_regon, fir_klient_id, kli_imie, kli_nazwisko from "
+                + "Firma, klient  where fir_klient_id=kli_id";
+        
+        try {
+            Connection conn = DataBase.Connection();
+            stmt = conn.createStatement();
+            pst = conn.prepareStatement(wybierzFirmy);
+            rs = pst.executeQuery();
+
+            stmt.executeUpdate(usunFirme);
+
+            uzupelnij.ClearTable(CompanyTable);
+            uzupelnij.FillCompany(CompanyTable,rs);
+            
+            stmt.close();
+            pst.close(); rs.close();
+            conn.close();
+            
+            JOptionPane.showMessageDialog(null, "Usunięto firmę z bazy");
+            
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Nie udało się usunąć danych: " + ex);
+        }       
+        
+        
+    }//GEN-LAST:event_deleteCompanyBtnActionPerformed
+
+    private void rulesItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rulesItemActionPerformed
+        
+        CardLayout card = (CardLayout) changingPanel2.getLayout();
+        card.show(changingPanel2, "programPanel");
+        
+        String wybierzPunkty = "select * from program_lojal where pro_id=1";
+        
+        try {
+            Connection conn = DataBase.Connection();
+            
+            pst = conn.prepareStatement(wybierzPunkty);
+            rs = pst.executeQuery();
+   
+            tank95Field.setText(rs.getString("pro_e95"));
+            tank98Field.setText(rs.getString("pro_e98"));
+            tankONField.setText(rs.getString("pro_on"));
+            tankLPGField.setText(rs.getString("pro_lpg"));
+            mycieField.setText(rs.getString("pro_wash"));
+            woskField.setText(rs.getString("pro_wax"));
+                    
+            benzPointsField.setText(rs.getString("pro_pkt_paliwo"));
+            lpgPointsField.setText(rs.getString("pro_pkt_gaz"));
+            washField.setText(rs.getString("pro_pkt_myjnia"));
+            waxField.setText(rs.getString("pro_pkt_wosk"));
+            
+            rs.close(); pst.close(); conn.close();
+        
+        } catch (SQLException ex) {
+            
+            JOptionPane.showMessageDialog(null, "Błąd " + ex);
+        }
+
+       
+    }//GEN-LAST:event_rulesItemActionPerformed
+
+    private void tank95FieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tank95FieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tank95FieldActionPerformed
+
+    private void changePointsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePointsBtnActionPerformed
+        
+        String e95 = tank95Field.getText();
+        String e98 = tank98Field.getText();
+        String on = tankONField.getText();
+        String lpg = tankLPGField.getText();
+        String mycie = mycieField.getText();
+        String wosk = woskField.getText();
+
+        Statement stmt;
+        UserPanel panel = new UserPanel();
+       
+        String zmienPunkty = "update program_lojal set pro_e95=" + e95 + ", pro_e98=" + e98 +
+                ", pro_on=" + on + ", pro_lpg=" + lpg + ", pro_wash=" + mycie + ", pro_wax=" + wosk;
+        
+        try {
+            Connection conn = DataBase.Connection();
+            stmt = conn.createStatement();
+            stmt.executeUpdate(zmienPunkty);
+            
+            stmt.close(); conn.close();
+            
+            panel.UstawLabele();
+            JOptionPane.showMessageDialog(null, "Zmieniono punkty");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Błąd " + ex);
+        }
+
+    }//GEN-LAST:event_changePointsBtnActionPerformed
+
+    private void changePoints2BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePoints2BtnActionPerformed
+        
+        String benz = benzPointsField.getText();
+        String lpg = lpgPointsField.getText();
+        String wash = washField.getText();
+        String wax = waxField.getText();
+        
+        Statement stmt;
+        UserPanel panel = new UserPanel();
+        
+        String zmienPunkty = "update program_lojal set pro_pkt_paliwo=" + benz + ", pro_pkt_gaz" + lpg +
+                ", pro_pkt_myjnia=" + wash + ", pro_pkt_wosk=" + wax;
+                
+        try {
+            Connection conn = DataBase.Connection();
+            stmt = conn.createStatement();
+            stmt.executeUpdate(zmienPunkty);
+            
+            stmt.close(); conn.close();
+            
+            panel.UstawLabele();
+            JOptionPane.showMessageDialog(null, "Zmieniono punkty");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Błąd " + ex);
+        }
+        
+    }//GEN-LAST:event_changePoints2BtnActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
 
@@ -954,8 +1449,11 @@ public class AdminPanel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable CompanyTable;
+    private javax.swing.JTextField benzPointsField;
     private javax.swing.JMenuItem cameraItem;
     private javax.swing.JMenu cameraMenu;
+    private javax.swing.JButton changePoints2Btn;
+    private javax.swing.JButton changePointsBtn;
     private javax.swing.JPanel changingPanel2;
     private javax.swing.JTable clientsTable;
     private javax.swing.JMenuItem companyItem;
@@ -965,12 +1463,39 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JButton editBtn;
     private javax.swing.JButton editCompanyBtn;
     private javax.swing.JButton editUserBtn;
+    private javax.swing.JPasswordField hasloField;
+    private javax.swing.JLabel hasloLabel;
+    private javax.swing.JLabel idCompLabel;
     private javax.swing.JLabel idLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -983,9 +1508,10 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel klienciCard;
     private javax.swing.JMenuItem klientsItem;
-    private javax.swing.JMenuItem listItem;
     private javax.swing.JMenuItem logoffItem;
     private javax.swing.JMenu loyProgMenu;
+    private javax.swing.JTextField lpgPointsField;
+    private javax.swing.JTextField mycieField;
     private javax.swing.JTextField newAddressField;
     private javax.swing.JTextField newCityField;
     private javax.swing.JPanel newClientPanel;
@@ -1000,8 +1526,17 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JTextField newRegonField;
     private javax.swing.JTextField newSurnameField;
     private javax.swing.JButton newUserBtn;
+    private javax.swing.JPanel programPanel;
     private javax.swing.JMenuItem rulesItem;
+    private javax.swing.JTextField tank95Field;
+    private javax.swing.JTextField tank98Field;
+    private javax.swing.JTextField tankLPGField;
+    private javax.swing.JTextField tankONField;
+    private javax.swing.JLabel tankowanieelpegie;
+    private javax.swing.JTextField washField;
     private javax.swing.JMenuItem washItem;
     private javax.swing.JMenu washMenu;
+    private javax.swing.JTextField waxField;
+    private javax.swing.JTextField woskField;
     // End of variables declaration//GEN-END:variables
 }

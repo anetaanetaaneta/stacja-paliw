@@ -23,6 +23,8 @@ public class DataBase {
             Connection conn = null;
             ResultSet rs = null;
             PreparedStatement pst = null;
+            ResultSet rs2 = null;
+            PreparedStatement pst2 = null;
       
      public static Connection Connection()
      {

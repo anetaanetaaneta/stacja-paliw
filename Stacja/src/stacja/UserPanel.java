@@ -25,6 +25,8 @@ public class UserPanel extends javax.swing.JFrame {
     Connection conn = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
+    ResultSet rs2 = null;
+    PreparedStatement pst2 = null;
    
     /**
      * Creates new form UserPanel
@@ -975,28 +977,41 @@ public class UserPanel extends javax.swing.JFrame {
 
     private void logBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logBtnActionPerformed
         String sql = "select * from Admin where admName=? and admPassword=? ";
+        String sql2 = "select * from Klient where Kli_mail=? and Kli_Haslo=?";
         
         try{
             conn = DataBase.Connection();
             pst = conn.prepareStatement(sql);
+            pst2 = conn.prepareStatement(sql2);
+            
             pst.setString(1, userNameField.getText());
             pst.setString(2, PasswordField.getText());
+            
+            pst2.setString(1, userNameField.getText());
+            pst2.setString(2, PasswordField.getText());
         
             rs = pst.executeQuery();
+            rs2 = pst2.executeQuery();
         
             if(rs.next())
             {
                 dispose();
                 AdminPanel admin = new AdminPanel();
                 admin.setVisible(true);
-            
+               
+            }
+            if(rs2.next())
+            {
+                dispose();
+              CustomPanel custom = new CustomPanel();
+              custom.setVisible(true);  
             }
             else 
             {
                 warnLabel.setVisible(true);
             
             }
-            pst.close();
+            pst.close(); pst2.close();
             conn.close();
         }
         

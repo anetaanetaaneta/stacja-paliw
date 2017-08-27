@@ -83,6 +83,26 @@ public class FillTable {
         }
         rs.close();
     }
+    
+    public void FilltableReserve(JTable tabela, ResultSet rs)throws SQLException
+    {
+        DefaultTableModel model = (DefaultTableModel)tabela.getModel();
+        String data, godz, rodzaj;
+        int i = 3;
+        Object row[] = new Object[i];
+        
+        while(rs.next())
+        {
+            data = rs.getString("Rez_data");
+            godz = rs.getString("Rez_godz");
+            rodzaj = rs.getString("Rez_Myj_rodzaj");
+            model.addRow(row);
+            tabela.setModel(model);
+            model.fireTableDataChanged();
+        }
+        rs.close();
+    }
+    
         
     public void ClearTable(JTable tabela) {
         DefaultTableModel model = (DefaultTableModel) tabela.getModel();

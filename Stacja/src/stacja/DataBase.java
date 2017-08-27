@@ -91,10 +91,12 @@ public class DataBase {
      {
          String sql = "CREATE TABLE IF NOT EXISTS Rezerwacja (\n"
                 + "	Rez_Id integer PRIMARY KEY,\n"
-                + "	Rez_Klient_Id integer,\n"
-                + "	Rez_Data integer\n"
+                + "	Rez_Kli_mail text,\n"
+                + "	Rez_Data text,\n"
+                + "	Rez_godz text,\n"
+                + "	Rez_Myj_rodzaj text \n"
                 + ");";
-      
+         
           try (Connection conn = DriverManager.getConnection(url);
                 Statement stmt = conn.createStatement())
            {
@@ -111,10 +113,13 @@ public class DataBase {
      public static void CreateTableParametry()
      {
          String sql = "CREATE TABLE IF NOT EXISTS Parametry (\n"
-                + "	Par_Id integer PRIMARY KEY,\n"
-                + "	Par_Nazwa text,\n"
-                + "	Par_Stan text,\n"
-                + "	Par_Punkt_Alarmowy text\n"
+                + "	Par_ID integer PRIMARY KEY,\n"
+                + "	Par_e95 text,\n"
+                + "	Par_e98 text,\n"
+                + "	Par_ON text,\n"
+                + "	Par_lpg text,\n"
+                + "	Par_mycie text,\n"
+                + "	Par_wosk text\n"
                 + ");";
       
           try (Connection conn = DriverManager.getConnection(url);
@@ -126,7 +131,7 @@ public class DataBase {
            }
            catch (SQLException e) 
            {
-            System.out.println(e.getMessage());
+            System.out.println("Bład w bazie!");
            }
     }
      

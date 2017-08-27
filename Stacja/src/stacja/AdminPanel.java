@@ -134,6 +134,21 @@ public class AdminPanel extends javax.swing.JFrame {
         waxField = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         changePoints2Btn = new javax.swing.JButton();
+        PricePanel = new javax.swing.JPanel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        washTextField = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        ONTextField = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        oil1TextField = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        gasTextField = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        oil2TextField = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        wash2TextField = new javax.swing.JTextField();
+        SaveChangesBtn = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         newMenu = new javax.swing.JMenu();
         klientsItem = new javax.swing.JMenuItem();
@@ -145,6 +160,8 @@ public class AdminPanel extends javax.swing.JFrame {
         washItem = new javax.swing.JMenuItem();
         cameraMenu = new javax.swing.JMenu();
         cameraItem = new javax.swing.JMenuItem();
+        priceMenu = new javax.swing.JMenu();
+        changePriceMenu = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         logoffItem = new javax.swing.JMenuItem();
 
@@ -676,6 +693,118 @@ public class AdminPanel extends javax.swing.JFrame {
 
         changingPanel2.add(programPanel, "programPanel");
 
+        jLabel36.setText("Podaj nową cenę usług:");
+
+        jLabel37.setText("ON");
+
+        jLabel38.setText("95");
+
+        jLabel39.setText("98");
+
+        jLabel40.setText("LPG");
+
+        jLabel41.setText("Mycie");
+
+        jLabel42.setText("Mycie z woskowaniem");
+
+        SaveChangesBtn.setText("Zapisz");
+        SaveChangesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveChangesBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PricePanelLayout = new javax.swing.GroupLayout(PricePanel);
+        PricePanel.setLayout(PricePanelLayout);
+        PricePanelLayout.setHorizontalGroup(
+            PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PricePanelLayout.createSequentialGroup()
+                .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PricePanelLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PricePanelLayout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(PricePanelLayout.createSequentialGroup()
+                                .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel38))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(PricePanelLayout.createSequentialGroup()
+                                        .addGap(355, 355, 355)
+                                        .addComponent(jLabel39))))
+                            .addGroup(PricePanelLayout.createSequentialGroup()
+                                .addComponent(jLabel41)
+                                .addGap(54, 54, 54)
+                                .addComponent(washTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(169, 169, 169)
+                                .addComponent(jLabel42)))
+                        .addGap(18, 18, 18)
+                        .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(gasTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(oil1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(wash2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(PricePanelLayout.createSequentialGroup()
+                        .addGap(350, 350, 350)
+                        .addComponent(SaveChangesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(440, Short.MAX_VALUE))
+            .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PricePanelLayout.createSequentialGroup()
+                    .addGap(202, 202, 202)
+                    .addComponent(ONTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(823, Short.MAX_VALUE)))
+            .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PricePanelLayout.createSequentialGroup()
+                    .addGap(200, 200, 200)
+                    .addComponent(oil2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(825, Short.MAX_VALUE)))
+        );
+        PricePanelLayout.setVerticalGroup(
+            PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PricePanelLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel36)
+                .addGap(28, 28, 28)
+                .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(oil1TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel39))
+                .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PricePanelLayout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(gasTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel40))
+                        .addGap(44, 44, 44))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PricePanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel38)
+                        .addGap(43, 43, 43)))
+                .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(washTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel42)
+                    .addComponent(wash2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addComponent(SaveChangesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(164, Short.MAX_VALUE))
+            .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PricePanelLayout.createSequentialGroup()
+                    .addGap(71, 71, 71)
+                    .addComponent(ONTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(407, Short.MAX_VALUE)))
+            .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PricePanelLayout.createSequentialGroup()
+                    .addGap(152, 152, 152)
+                    .addComponent(oil2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(326, Short.MAX_VALUE)))
+        );
+
+        changingPanel2.add(PricePanel, "priceCard");
+
         newMenu.setText("Klienci");
         newMenu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -739,6 +868,18 @@ public class AdminPanel extends javax.swing.JFrame {
         cameraMenu.add(cameraItem);
 
         jMenuBar1.add(cameraMenu);
+
+        priceMenu.setText("Ceny");
+
+        changePriceMenu.setText("Ustal ceny");
+        changePriceMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changePriceMenuActionPerformed(evt);
+            }
+        });
+        priceMenu.add(changePriceMenu);
+
+        jMenuBar1.add(priceMenu);
 
         jMenu1.setText("Wyloguj");
 
@@ -1351,7 +1492,7 @@ public class AdminPanel extends javax.swing.JFrame {
         Statement stmt;
         UserPanel panel = new UserPanel();
         
-        String zmienPunkty = "update program_lojal set pro_pkt_paliwo=" + benz + ", pro_pkt_gaz" + lpg +
+        String zmienPunkty = "update program_lojal set pro_pkt_paliwo=" + benz + ", pro_pkt_gaz=" + lpg +
                 ", pro_pkt_myjnia=" + wash + ", pro_pkt_wosk=" + wax;
                 
         try {
@@ -1369,6 +1510,65 @@ public class AdminPanel extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_changePoints2BtnActionPerformed
+
+    private void changePriceMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePriceMenuActionPerformed
+        CardLayout card = (CardLayout) changingPanel2.getLayout();
+        card.show(changingPanel2, "priceCard");
+        
+        
+        String ustalCeny = "select * from Parametry where Par_ID=1";
+
+        try {
+            Connection conn = DataBase.Connection();
+            
+            pst = conn.prepareStatement(ustalCeny);
+            rs = pst.executeQuery();
+           
+            oil2TextField.setText(rs.getString("Par_e95"));
+            oil1TextField.setText(rs.getString("Par_e98"));
+            gasTextField.setText(rs.getString("Par_lpg"));
+            ONTextField.setText(rs.getString("Par_ON"));
+            washTextField.setText(rs.getString("Par_mycie"));
+            wash2TextField.setText(rs.getString("Par_wosk"));          
+            
+            rs.close(); pst.close(); conn.close();
+        
+        } catch (SQLException ex) {
+            
+            JOptionPane.showMessageDialog(null, "Błąd " + ex);
+        }
+    }//GEN-LAST:event_changePriceMenuActionPerformed
+
+    private void SaveChangesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveChangesBtnActionPerformed
+        
+        String benz95 = oil2TextField.getText();
+        String benz98 = oil1TextField.getText();
+        String lpg = gasTextField.getText();
+        String on = ONTextField.getText();
+        String wash = washTextField.getText();
+        String wax = wash2TextField.getText();
+        
+        Statement stmt;
+        //UserPanel cennik = new UserPanel();
+       
+        String zmienCene = "update Parametry set Par_e95='" + benz95 + "', Par_e98='" + benz98 + "', Par_ON='" 
+                + on + "', Par_lpg='" + lpg + "', Par_mycie='" + wash + "', Par_wosk='" + wax + "'";
+        
+        try {
+            Connection conn = DataBase.Connection();
+            stmt = conn.createStatement();
+            stmt.executeUpdate(zmienCene);
+            
+            stmt.close(); conn.close();
+            
+            //cennik.CenywWindow();
+            JOptionPane.showMessageDialog(null, "Zaktualizowano ceny!");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Błąd w admin " + ex);
+        }
+        
+    }//GEN-LAST:event_SaveChangesBtnActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
 
@@ -1449,11 +1649,15 @@ public class AdminPanel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable CompanyTable;
+    private javax.swing.JTextField ONTextField;
+    private javax.swing.JPanel PricePanel;
+    private javax.swing.JButton SaveChangesBtn;
     private javax.swing.JTextField benzPointsField;
     private javax.swing.JMenuItem cameraItem;
     private javax.swing.JMenu cameraMenu;
     private javax.swing.JButton changePoints2Btn;
     private javax.swing.JButton changePointsBtn;
+    private javax.swing.JMenuItem changePriceMenu;
     private javax.swing.JPanel changingPanel2;
     private javax.swing.JTable clientsTable;
     private javax.swing.JMenuItem companyItem;
@@ -1463,6 +1667,7 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JButton editBtn;
     private javax.swing.JButton editCompanyBtn;
     private javax.swing.JButton editUserBtn;
+    private javax.swing.JTextField gasTextField;
     private javax.swing.JPasswordField hasloField;
     private javax.swing.JLabel hasloLabel;
     private javax.swing.JLabel idCompLabel;
@@ -1496,7 +1701,14 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1526,6 +1738,9 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JTextField newRegonField;
     private javax.swing.JTextField newSurnameField;
     private javax.swing.JButton newUserBtn;
+    private javax.swing.JTextField oil1TextField;
+    private javax.swing.JTextField oil2TextField;
+    private javax.swing.JMenu priceMenu;
     private javax.swing.JPanel programPanel;
     private javax.swing.JMenuItem rulesItem;
     private javax.swing.JTextField tank95Field;
@@ -1533,9 +1748,11 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JTextField tankLPGField;
     private javax.swing.JTextField tankONField;
     private javax.swing.JLabel tankowanieelpegie;
+    private javax.swing.JTextField wash2TextField;
     private javax.swing.JTextField washField;
     private javax.swing.JMenuItem washItem;
     private javax.swing.JMenu washMenu;
+    private javax.swing.JTextField washTextField;
     private javax.swing.JTextField waxField;
     private javax.swing.JTextField woskField;
     // End of variables declaration//GEN-END:variables

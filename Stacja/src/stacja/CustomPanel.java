@@ -5,6 +5,17 @@
  */
 package stacja;
 
+import java.awt.CardLayout;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Aneta
@@ -14,8 +25,34 @@ public class CustomPanel extends javax.swing.JFrame {
     /**
      * Creates new form CustomPanel
      */
+    Connection conn = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+
+    
     public CustomPanel() {
+        conn = DataBase.Connection();
         initComponents();
+        
+        FillWashCombo();
+    }
+    
+    public void FillWashCombo()
+    {
+        try {
+
+            String sql = "select * from Myjnia";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                String kind = rs.getString("Myj_rodzaj");
+                washCombo.addItem(kind);  
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
 
     /**
@@ -27,13 +64,264 @@ public class CustomPanel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        TankPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        WylogujBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        WashingPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        reserveBtn = new javax.swing.JButton();
+        washCombo = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
+        dataField = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        hourField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        nameField = new javax.swing.JTextField();
+        editPanel = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
+        lookupField = new javax.swing.JTextField();
+        lookupBtn = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         Historia = new javax.swing.JMenu();
         Tankowanie = new javax.swing.JMenuItem();
         Mycie = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        Myjnia = new javax.swing.JMenu();
+        Rezerwuj = new javax.swing.JMenuItem();
+        Edytuj = new javax.swing.JMenuItem();
+        Wyloguj = new javax.swing.JMenu();
+        loggoutItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new java.awt.CardLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Witaj na stacji STONKA!");
+
+        WylogujBtn.setText("Wyloguj");
+        WylogujBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WylogujBtnActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Jak zbierać punkty?");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Jak wymienić punkty?");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TankPanelLayout = new javax.swing.GroupLayout(TankPanel);
+        TankPanel.setLayout(TankPanelLayout);
+        TankPanelLayout.setHorizontalGroup(
+            TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TankPanelLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TankPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
+                        .addComponent(WylogujBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29))
+                    .addGroup(TankPanelLayout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(33, 33, 33)
+                        .addComponent(jButton2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        TankPanelLayout.setVerticalGroup(
+            TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TankPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(WylogujBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(356, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(TankPanel, "card2");
+
+        jLabel2.setText("Wybierz datę:");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Data", "Godzina", "Rodzaj"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        jScrollPane1.setViewportView(jScrollPane2);
+
+        reserveBtn.setText("Rezerwuj");
+        reserveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reserveBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Wybierz opcję mycia:");
+
+        dataField.setText("dd-MM-yyyy");
+
+        jLabel4.setText("Wybierz godzinę:");
+
+        hourField.setText("hh:mm");
+
+        jLabel5.setText("Podaj swój adres e-mail i dokonaj rezerwacji.");
+
+        nameField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameFieldActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout WashingPanelLayout = new javax.swing.GroupLayout(WashingPanel);
+        WashingPanel.setLayout(WashingPanelLayout);
+        WashingPanelLayout.setHorizontalGroup(
+            WashingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(WashingPanelLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addGroup(WashingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4)
+                    .addGroup(WashingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(hourField, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(washCombo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(dataField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(WashingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WashingPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(118, 118, 118))
+                    .addGroup(WashingPanelLayout.createSequentialGroup()
+                        .addGroup(WashingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(WashingPanelLayout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addComponent(reserveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(WashingPanelLayout.createSequentialGroup()
+                                .addGap(52, 52, 52)
+                                .addGroup(WashingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        WashingPanelLayout.setVerticalGroup(
+            WashingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(WashingPanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(washCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(dataField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(hourField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+            .addGroup(WashingPanelLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(reserveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(WashingPanel, "WashingPanel");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Data", "Godzina", "Rodzaj"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable2);
+
+        jScrollPane3.setViewportView(jScrollPane4);
+
+        jLabel6.setText("Wpisz swój adres email, a my wyszukamy za ciebie historię myjni");
+
+        lookupBtn.setText("Szukaj");
+        lookupBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lookupBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout editPanelLayout = new javax.swing.GroupLayout(editPanel);
+        editPanel.setLayout(editPanelLayout);
+        editPanelLayout.setHorizontalGroup(
+            editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editPanelLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(editPanelLayout.createSequentialGroup()
+                        .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lookupField, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(editPanelLayout.createSequentialGroup()
+                                .addGap(45, 45, 45)
+                                .addComponent(lookupBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(58, 58, 58)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(101, Short.MAX_VALUE))
+        );
+        editPanelLayout.setVerticalGroup(
+            editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editPanelLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(editPanelLayout.createSequentialGroup()
+                        .addComponent(lookupField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(lookupBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(101, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(editPanel, "editPanel");
 
         Historia.setText("Historia");
 
@@ -41,12 +329,47 @@ public class CustomPanel extends javax.swing.JFrame {
         Historia.add(Tankowanie);
 
         Mycie.setText("Mycie");
+        Mycie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MycieActionPerformed(evt);
+            }
+        });
         Historia.add(Mycie);
 
         jMenuBar1.add(Historia);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        Myjnia.setText("Rezerwuj");
+
+        Rezerwuj.setText("Myjnia");
+        Rezerwuj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RezerwujActionPerformed(evt);
+            }
+        });
+        Myjnia.add(Rezerwuj);
+
+        Edytuj.setText("jMenuItem1");
+        Edytuj.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EdytujActionPerformed(evt);
+            }
+        });
+        Myjnia.add(Edytuj);
+        Edytuj.getAccessibleContext().setAccessibleName("editItem");
+
+        jMenuBar1.add(Myjnia);
+
+        Wyloguj.setText("Wyloguj");
+
+        loggoutItem.setText("Wyloguj z konta");
+        loggoutItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loggoutItemActionPerformed(evt);
+            }
+        });
+        Wyloguj.add(loggoutItem);
+
+        jMenuBar1.add(Wyloguj);
 
         setJMenuBar(jMenuBar1);
 
@@ -54,15 +377,131 @@ public class CustomPanel extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 852, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 814, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 501, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void WylogujBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WylogujBtnActionPerformed
+        dispose();
+        
+        UserPanel newPanel = new UserPanel();
+        newPanel.setVisible(true);
+    }//GEN-LAST:event_WylogujBtnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JOptionPane.showMessageDialog(null,"To proste! Wystarczy, że po każdym tankowaniu, "
+                + "bądź myciu, wypełnisz puste pola poniżej, /n korzystając z informacji zamieszczonych na paragonie. Klikasz OK i zbierasz punkty ");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JOptionPane.showMessageDialog(null,"");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void reserveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reserveBtnActionPerformed
+        
+        ResultSet rs;
+        PreparedStatement pst;
+        Statement stmt;
+        
+        NewID noweID = new NewID();
+        int userID = noweID.UstawNumer("Rez_Id","Rezerwacja");
+        String idU = Integer.toString(userID);
+        
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        
+        
+        String data = dataField.getText();
+        String godz = hourField.getText();
+        String customMail = nameField.getText();
+        Object mycie = washCombo.getSelectedItem().toString();
+        
+        String addWash = "insert into Rezerwacja(Rez_Id, Rez_Kli_mail, Rez_Data, Rez_godz, Rez_Myj_rodzaj) values \n"
+                + "('" + idU + "','" + customMail + "','" + data + "','" + godz + "','" + mycie + "' );";
+        
+        model.addRow(new Object[]{data,godz,mycie});
+        
+        try {
+            stmt = conn.createStatement();
+            stmt.executeUpdate(addWash);
+            stmt.close();
+            JOptionPane.showMessageDialog(null, "Dokonano rezerwacji! Za kilka chwil dostaniesz maila z potwierdzeniem.");
+            
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        dataField.setText("dd-MM-yyyy");
+        hourField.setText("hh:mm");
+        nameField.setText("");
+        
+        
+    }//GEN-LAST:event_reserveBtnActionPerformed
+
+    private void RezerwujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RezerwujActionPerformed
+        
+        CardLayout card = (CardLayout) jPanel1.getLayout();
+        card.show(jPanel1, "WashingPanel");
+        
+    }//GEN-LAST:event_RezerwujActionPerformed
+
+    private void nameFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameFieldActionPerformed
+
+    private void loggoutItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loggoutItemActionPerformed
+        dispose();
+        
+        UserPanel newPanel = new UserPanel();
+        newPanel.setVisible(true);
+    }//GEN-LAST:event_loggoutItemActionPerformed
+
+    private void MycieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MycieActionPerformed
+        
+        CardLayout card = (CardLayout) jPanel1.getLayout();
+        card.show(jPanel1, "editPanel");
+        
+    }//GEN-LAST:event_MycieActionPerformed
+
+    private void lookupBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lookupBtnActionPerformed
+        ResultSet rs;
+        PreparedStatement pst;
+        Statement stmt;
+        
+        FillTable uzupelnij = new FillTable();
+        String mail = lookupField.getText();
+        
+        String wybierzRez = "select * from Rezerwacja where Rez_Kli_mail='" + mail + "'";
+        try {
+            Connection conn = DataBase.Connection();
+            stmt = conn.createStatement();
+            pst = conn.prepareStatement(wybierzRez);
+            rs = pst.executeQuery();
+
+            uzupelnij.FilltableReserve(jTable2, rs);
+            stmt.close();
+            pst.close(); rs.close();
+            conn.close();
+
+            
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Nie udało się " + ex);
+        }
+    }//GEN-LAST:event_lookupBtnActionPerformed
+
+    private void EdytujActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EdytujActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EdytujActionPerformed
 
     /**
      * @param args the command line arguments
@@ -100,10 +539,41 @@ public class CustomPanel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Edytuj;
     private javax.swing.JMenu Historia;
     private javax.swing.JMenuItem Mycie;
+    private javax.swing.JMenu Myjnia;
+    private javax.swing.JMenuItem Rezerwuj;
+    private javax.swing.JPanel TankPanel;
     private javax.swing.JMenuItem Tankowanie;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JPanel WashingPanel;
+    private javax.swing.JMenu Wyloguj;
+    private javax.swing.JButton WylogujBtn;
+    private javax.swing.JTextField dataField;
+    public javax.swing.JPanel editPanel;
+    private javax.swing.JTextField hourField;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private com.toedter.calendar.JCalendar jCalendar1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JMenuItem loggoutItem;
+    private javax.swing.JButton lookupBtn;
+    private javax.swing.JTextField lookupField;
+    private javax.swing.JTextField nameField;
+    public javax.swing.JButton reserveBtn;
+    private javax.swing.JComboBox<String> washCombo;
     // End of variables declaration//GEN-END:variables
 }

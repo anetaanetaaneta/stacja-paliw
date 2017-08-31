@@ -64,19 +64,15 @@ public class CustomPanel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton3 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        TankPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        WylogujBtn = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         WashingPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         reserveBtn = new javax.swing.JButton();
-        washCombo = new javax.swing.JComboBox<>();
+        washCombo = new javax.swing.JComboBox<String>();
         jLabel3 = new javax.swing.JLabel();
         jCalendar1 = new com.toedter.calendar.JCalendar();
         dataField = new javax.swing.JTextField();
@@ -91,7 +87,20 @@ public class CustomPanel extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         lookupField = new javax.swing.JTextField();
         lookupBtn = new javax.swing.JButton();
+        TankPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        WylogujBtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jTextFieldId = new javax.swing.JTextField();
+        jButtonOblicz = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jTextFieldSuma = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         Historia = new javax.swing.JMenu();
         Tankowanie = new javax.swing.JMenuItem();
         Mycie = new javax.swing.JMenuItem();
@@ -101,67 +110,11 @@ public class CustomPanel extends javax.swing.JFrame {
         Wyloguj = new javax.swing.JMenu();
         loggoutItem = new javax.swing.JMenuItem();
 
+        jButton3.setText("jButton3");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new java.awt.CardLayout());
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Witaj na stacji STONKA!");
-
-        WylogujBtn.setText("Wyloguj");
-        WylogujBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WylogujBtnActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Jak zbierać punkty?");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Jak wymienić punkty?");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout TankPanelLayout = new javax.swing.GroupLayout(TankPanel);
-        TankPanel.setLayout(TankPanelLayout);
-        TankPanelLayout.setHorizontalGroup(
-            TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TankPanelLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(TankPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
-                        .addComponent(WylogujBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29))
-                    .addGroup(TankPanelLayout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(33, 33, 33)
-                        .addComponent(jButton2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
-        TankPanelLayout.setVerticalGroup(
-            TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(TankPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(WylogujBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(356, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(TankPanel, "card2");
 
         jLabel2.setText("Wybierz datę:");
 
@@ -323,9 +276,130 @@ public class CustomPanel extends javax.swing.JFrame {
 
         jPanel1.add(editPanel, "editPanel");
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setText("Witaj na stacji STONKA!");
+
+        WylogujBtn.setText("Wyloguj");
+        WylogujBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WylogujBtnActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Jak zbierać punkty?");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Jak wymienić punkty?");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Podaj ID usługi widoczne na paragonie:");
+
+        jButtonOblicz.setText("Oblicz punkty!");
+        jButtonOblicz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonObliczActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel9.setText("ZEBRAŁEŚ:");
+
+        jTextFieldSuma.setText(" ");
+        jTextFieldSuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldSumaActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("PKT");
+
+        javax.swing.GroupLayout TankPanelLayout = new javax.swing.GroupLayout(TankPanel);
+        TankPanel.setLayout(TankPanelLayout);
+        TankPanelLayout.setHorizontalGroup(
+            TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TankPanelLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TankPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
+                        .addComponent(WylogujBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29))
+                    .addGroup(TankPanelLayout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(33, 33, 33)
+                        .addComponent(jButton2)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(TankPanelLayout.createSequentialGroup()
+                        .addGroup(TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(TankPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldSuma, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel10))
+                            .addGroup(TankPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(72, 72, 72)
+                                .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(47, 47, 47)
+                        .addComponent(jButtonOblicz, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        TankPanelLayout.setVerticalGroup(
+            TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TankPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(WylogujBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(58, 58, 58)
+                .addGroup(TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonOblicz, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(TankPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jTextFieldSuma, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addContainerGap(196, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(TankPanel, "TankPanel");
+
+        jMenu1.setText("Strona Główna");
+
+        jMenuItem1.setText("Powrót");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+
         Historia.setText("Historia");
 
         Tankowanie.setText("Tankowanie");
+        Tankowanie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TankowanieActionPerformed(evt);
+            }
+        });
         Historia.add(Tankowanie);
 
         Mycie.setText("Mycie");
@@ -402,7 +476,7 @@ public class CustomPanel extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JOptionPane.showMessageDialog(null,"To proste! Wystarczy, że po każdym tankowaniu, "
-                + "bądź myciu, wypełnisz puste pola poniżej, /n korzystając z informacji zamieszczonych na paragonie. Klikasz OK i zbierasz punkty ");
+                + "bądź myciu, wypełnisz puste pola poniżej, korzystając z informacji zamieszczonych na paragonie. Klikasz OK i zbierasz punkty ");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -503,6 +577,76 @@ public class CustomPanel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_EdytujActionPerformed
 
+    private void TankowanieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TankowanieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TankowanieActionPerformed
+
+    private void jButtonObliczActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonObliczActionPerformed
+        
+        ResultSet rs;
+        PreparedStatement pst;
+        Statement stmt;
+        
+        
+        String id = jTextFieldId.getText();
+        int id2 = Integer.parseInt(id);
+        
+        String wybierzU = "select * from Usluga where Usl_Id='" + id2 + "'";
+        try {
+            Connection conn = DataBase.Connection();
+            stmt = conn.createStatement();
+            pst = conn.prepareStatement(wybierzU);
+            rs = pst.executeQuery();
+            
+            String punkty = rs.getString("Usl_Cena_Paliwa");
+            int punkty2 = Integer.parseInt(punkty);
+            
+            int punkty3 = punkty2/2;
+            String punkty4 = Integer.toString(punkty3);
+            
+            jTextFieldSuma.setText(punkty4);
+
+            stmt.close();
+            pst.close(); rs.close();
+            conn.close();
+
+            
+        } catch(SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Nie udało się " + ex);
+        }
+        
+        
+        String pkt = jTextFieldSuma.getText();
+        int pkt2 = Integer.parseInt(pkt);
+        
+        String aktual = "update Klient set Kli_Punkty='" + pkt2 + "'";
+        
+        try {
+            Connection conn = DataBase.Connection();
+            stmt = conn.createStatement();
+            stmt.executeUpdate(aktual);
+            
+            stmt.close(); conn.close();
+            
+            //cennik.CenywWindow();
+            JOptionPane.showMessageDialog(null, "Zaktualizowano punkty!");
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Wystąpił błąd!" + ex);
+        }
+        
+        
+    }//GEN-LAST:event_jButtonObliczActionPerformed
+
+    private void jTextFieldSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSumaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldSumaActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        CardLayout card = (CardLayout) jPanel1.getLayout();
+        card.show(jPanel1, "TankPanel");
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -554,14 +698,21 @@ public class CustomPanel extends javax.swing.JFrame {
     private javax.swing.JTextField hourField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonOblicz;
     private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -569,6 +720,8 @@ public class CustomPanel extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTextField jTextFieldId;
+    private javax.swing.JTextField jTextFieldSuma;
     private javax.swing.JMenuItem loggoutItem;
     private javax.swing.JButton lookupBtn;
     private javax.swing.JTextField lookupField;

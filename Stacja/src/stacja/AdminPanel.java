@@ -11,8 +11,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,8 +35,8 @@ public class AdminPanel extends javax.swing.JFrame {
     
     public AdminPanel() {
         initComponents();
-
-        
+             
+                
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -46,7 +50,11 @@ public class AdminPanel extends javax.swing.JFrame {
         hasloLabel.setVisible(false);
         hasloField.setVisible(false);
         
+        
+        
     }
+    
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -157,7 +165,40 @@ public class AdminPanel extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        ZparagonPanel = new javax.swing.JPanel();
+        jLabel46 = new javax.swing.JLabel();
+        jComboBoxKlient = new javax.swing.JComboBox();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jComboBoxId = new javax.swing.JComboBox();
+        jButton5 = new javax.swing.JButton();
+        jTextFieldCenaPaliwa = new javax.swing.JTextField();
+        jTextFieldCenaMyjni = new javax.swing.JTextField();
+        jTextFieldImie = new javax.swing.JTextField();
+        jTextFieldData1 = new javax.swing.JTextField();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        NparagonPanel = new javax.swing.JPanel();
+        NparagonPanel1 = new javax.swing.JPanel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel59 = new javax.swing.JLabel();
+        jTextField8 = new javax.swing.JTextField();
+        jLabel60 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
+        paragonMenu = new javax.swing.JMenu();
+        zarejestrowanyItem = new javax.swing.JMenuItem();
+        niezarejestrowanyItem = new javax.swing.JMenuItem();
         newMenu = new javax.swing.JMenu();
         klientsItem = new javax.swing.JMenuItem();
         companyItem = new javax.swing.JMenuItem();
@@ -233,7 +274,7 @@ public class AdminPanel extends javax.swing.JFrame {
                         .addGap(80, 80, 80)
                         .addComponent(deleteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1107, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1438, Short.MAX_VALUE)))
         );
         klienciCardLayout.setVerticalGroup(
             klienciCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,7 +285,7 @@ public class AdminPanel extends javax.swing.JFrame {
                 .addGroup(klienciCardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(editBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                     .addComponent(deleteBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         changingPanel2.add(klienciCard, "klienciCard");
@@ -335,7 +376,7 @@ public class AdminPanel extends javax.swing.JFrame {
                         .addComponent(idLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
                         .addComponent(idCompLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(hasloField, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(316, Short.MAX_VALUE))
+                .addContainerGap(647, Short.MAX_VALUE))
         );
         newClientPanelLayout.setVerticalGroup(
             newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,7 +436,7 @@ public class AdminPanel extends javax.swing.JFrame {
                 .addGroup(newClientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(newUserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                     .addComponent(editUserBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         changingPanel2.add(newClientPanel, "newClientPanel");
@@ -454,13 +495,13 @@ public class AdminPanel extends javax.swing.JFrame {
                         .addGap(77, 77, 77)
                         .addComponent(deleteCompanyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1060, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(378, Short.MAX_VALUE))
         );
         companyPanelLayout.setVerticalGroup(
             companyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(companyPanelLayout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 29, Short.MAX_VALUE)
+                .addGap(18, 83, Short.MAX_VALUE)
                 .addGroup(companyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(deleteCompanyBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
                     .addComponent(editCompanyBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -634,7 +675,7 @@ public class AdminPanel extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel34))
                             .addComponent(changePoints2Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(542, Short.MAX_VALUE))
         );
         programPanelLayout.setVerticalGroup(
             programPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -696,7 +737,7 @@ public class AdminPanel extends javax.swing.JFrame {
                     .addComponent(jLabel35))
                 .addGap(28, 28, 28)
                 .addComponent(changePoints2Btn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         changingPanel2.add(programPanel, "programPanel");
@@ -758,17 +799,17 @@ public class AdminPanel extends javax.swing.JFrame {
                     .addGroup(PricePanelLayout.createSequentialGroup()
                         .addGap(350, 350, 350)
                         .addComponent(SaveChangesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(440, Short.MAX_VALUE))
+                .addContainerGap(771, Short.MAX_VALUE))
             .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PricePanelLayout.createSequentialGroup()
                     .addGap(202, 202, 202)
                     .addComponent(ONTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(823, Short.MAX_VALUE)))
+                    .addContainerGap(1154, Short.MAX_VALUE)))
             .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PricePanelLayout.createSequentialGroup()
                     .addGap(200, 200, 200)
                     .addComponent(oil2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(825, Short.MAX_VALUE)))
+                    .addContainerGap(1156, Short.MAX_VALUE)))
         );
         PricePanelLayout.setVerticalGroup(
             PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -798,17 +839,17 @@ public class AdminPanel extends javax.swing.JFrame {
                     .addComponent(wash2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addComponent(SaveChangesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(218, Short.MAX_VALUE))
             .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PricePanelLayout.createSequentialGroup()
                     .addGap(71, 71, 71)
                     .addComponent(ONTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(407, Short.MAX_VALUE)))
+                    .addContainerGap(461, Short.MAX_VALUE)))
             .addGroup(PricePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PricePanelLayout.createSequentialGroup()
                     .addGap(152, 152, 152)
                     .addComponent(oil2TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(326, Short.MAX_VALUE)))
+                    .addContainerGap(380, Short.MAX_VALUE)))
         );
 
         changingPanel2.add(PricePanel, "priceCard");
@@ -895,10 +936,251 @@ public class AdminPanel extends javax.swing.JFrame {
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel44)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         changingPanel2.add(jPanel1, "cardMoni");
+
+        jLabel46.setText("KLIENT ZAREJESTROWANY - WYDAJ FAKTURĘ");
+
+        jComboBoxKlient.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                jComboBoxKlientPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
+        jComboBoxKlient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxKlientActionPerformed(evt);
+            }
+        });
+
+        jLabel48.setText("Wybierz nazwisko Klienta");
+
+        jLabel49.setText("Wybierz usługę (ID)");
+
+        jButton5.setText("ZATWIERDŹ");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jTextFieldImie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldImieActionPerformed(evt);
+            }
+        });
+
+        jLabel61.setText("Imię");
+
+        jLabel62.setText("Data");
+
+        jLabel63.setText("Cena paliwa");
+
+        jLabel64.setText("Cena myjni");
+
+        javax.swing.GroupLayout ZparagonPanelLayout = new javax.swing.GroupLayout(ZparagonPanel);
+        ZparagonPanel.setLayout(ZparagonPanelLayout);
+        ZparagonPanelLayout.setHorizontalGroup(
+            ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ZparagonPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ZparagonPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39))
+                    .addGroup(ZparagonPanelLayout.createSequentialGroup()
+                        .addGroup(ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel46)
+                            .addGroup(ZparagonPanelLayout.createSequentialGroup()
+                                .addGroup(ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(ZparagonPanelLayout.createSequentialGroup()
+                                            .addComponent(jLabel49)
+                                            .addGap(72, 72, 72)
+                                            .addComponent(jComboBoxId, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(117, 117, 117)
+                                            .addComponent(jLabel62))
+                                        .addComponent(jLabel63)
+                                        .addComponent(jLabel64)
+                                        .addComponent(jLabel61))
+                                    .addGroup(ZparagonPanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel48)
+                                        .addGap(48, 48, 48)
+                                        .addComponent(jComboBoxKlient, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(26, 26, 26)
+                                .addGroup(ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jTextFieldCenaPaliwa, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextFieldCenaMyjni, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextFieldData1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldImie, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(673, Short.MAX_VALUE))))
+        );
+        ZparagonPanelLayout.setVerticalGroup(
+            ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ZparagonPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel46)
+                .addGap(50, 50, 50)
+                .addGroup(ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxKlient, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel48)
+                    .addComponent(jTextFieldImie, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel61))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addGroup(ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ZparagonPanelLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel49))
+                    .addComponent(jComboBoxId, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(ZparagonPanelLayout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addGroup(ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldData1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel62))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldCenaPaliwa, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel63))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(ZparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldCenaMyjni, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel64))))
+                .addGap(107, 107, 107)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+        );
+
+        changingPanel2.add(ZparagonPanel, "cardZparagon");
+
+        jLabel53.setText("KLIENT NIEZAREJESTROWANY - WYDAJ PARAGON");
+
+        jLabel54.setText("Imię");
+
+        jLabel55.setText("Nazwisko");
+
+        jTextField3.setText("jTextField1");
+
+        jTextField4.setText("jTextField1");
+
+        jTextField5.setText("jTextField1");
+
+        jTextField6.setText("jTextField1");
+
+        jLabel57.setText("Ulica");
+
+        jLabel58.setText("Numer");
+
+        jTextField7.setText("jTextField1");
+
+        jLabel59.setText("Miejscowość");
+
+        jTextField8.setText("jTextField1");
+
+        jLabel60.setText("Kod pocztowy");
+
+        javax.swing.GroupLayout NparagonPanel1Layout = new javax.swing.GroupLayout(NparagonPanel1);
+        NparagonPanel1.setLayout(NparagonPanel1Layout);
+        NparagonPanel1Layout.setHorizontalGroup(
+            NparagonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NparagonPanel1Layout.createSequentialGroup()
+                .addGroup(NparagonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(NparagonPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel53))
+                    .addGroup(NparagonPanel1Layout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addGroup(NparagonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel55)
+                            .addComponent(jLabel54)
+                            .addComponent(jLabel57)
+                            .addComponent(jLabel58)
+                            .addComponent(jLabel59)
+                            .addComponent(jLabel60))
+                        .addGap(48, 48, 48)
+                        .addGroup(NparagonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField3)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jTextField7)
+                            .addComponent(jTextField8))))
+                .addContainerGap(611, Short.MAX_VALUE))
+        );
+        NparagonPanel1Layout.setVerticalGroup(
+            NparagonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NparagonPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel53)
+                .addGap(44, 44, 44)
+                .addGroup(NparagonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(NparagonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel55)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(NparagonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel57))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(NparagonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel58))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(NparagonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel59))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(NparagonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel60))
+                .addContainerGap(167, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout NparagonPanelLayout = new javax.swing.GroupLayout(NparagonPanel);
+        NparagonPanel.setLayout(NparagonPanelLayout);
+        NparagonPanelLayout.setHorizontalGroup(
+            NparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NparagonPanelLayout.createSequentialGroup()
+                .addComponent(NparagonPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 394, Short.MAX_VALUE))
+        );
+        NparagonPanelLayout.setVerticalGroup(
+            NparagonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NparagonPanelLayout.createSequentialGroup()
+                .addComponent(NparagonPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        changingPanel2.add(NparagonPanel, "cardNparagon");
+
+        paragonMenu.setText("Faktura");
+
+        zarejestrowanyItem.setText("Klient zarejestrowany");
+        zarejestrowanyItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                zarejestrowanyItemActionPerformed(evt);
+            }
+        });
+        paragonMenu.add(zarejestrowanyItem);
+
+        niezarejestrowanyItem.setText("Klient niezarejestrowany");
+        niezarejestrowanyItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                niezarejestrowanyItemActionPerformed(evt);
+            }
+        });
+        paragonMenu.add(niezarejestrowanyItem);
+
+        jMenuBar1.add(paragonMenu);
 
         newMenu.setText("Klienci");
         newMenu.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1701,6 +1983,105 @@ public class AdminPanel extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void zarejestrowanyItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zarejestrowanyItemActionPerformed
+        CardLayout card = (CardLayout) changingPanel2.getLayout();
+        card.show(changingPanel2, "cardZparagon");
+        
+         
+        String sql = "select * from klient";
+        
+        try{        
+            Connection conn = DataBase.Connection();
+            
+            pst=conn.prepareStatement(sql);
+            rs=pst.executeQuery();
+            
+            //Vector v = new Vector();
+            
+            List<String> ls = new ArrayList<String>(); 
+                        
+            while(rs.next())
+            {
+                String nazwisko = rs.getString("Kli_Nazwisko");
+                ls.add(nazwisko);
+                jComboBoxKlient.setModel(new DefaultComboBoxModel(ls.toArray()));
+               //jTextFieldImie.setText(rs.getString("Kli_Imie"));
+                
+                //rs.close(); pst.close(); conn.close();
+            }
+            
+        } catch (Exception e){
+            
+        }
+        
+        String sql2 = "select * from usluga";
+        
+        try{        
+            Connection conn = DataBase.Connection();
+            
+            pst=conn.prepareStatement(sql2);
+            rs=pst.executeQuery();
+            
+            while(rs.next())
+            {
+                String id = rs.getString("Usl_Id");
+                jComboBoxId.addItem(id);
+                jTextFieldData1.setText(rs.getString("Usl_Data"));
+                jTextFieldCenaPaliwa.setText(rs.getString("Usl_Cena_Paliwa"));
+                jTextFieldCenaMyjni.setText(rs.getString("Usl_Cena_Myjni"));
+                
+                //rs.close(); pst.close(); conn.close();
+            }
+            
+        } catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Błąd w AdminPanel: " + e);
+        }
+      
+        
+        
+    }//GEN-LAST:event_zarejestrowanyItemActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jComboBoxKlientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxKlientActionPerformed
+       
+    }//GEN-LAST:event_jComboBoxKlientActionPerformed
+
+    private void niezarejestrowanyItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_niezarejestrowanyItemActionPerformed
+        CardLayout card = (CardLayout) changingPanel2.getLayout();
+        card.show(changingPanel2, "cardNparagon");
+    }//GEN-LAST:event_niezarejestrowanyItemActionPerformed
+
+    private void jComboBoxKlientPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_jComboBoxKlientPopupMenuWillBecomeInvisible
+//        String tmp =(String) jComboBoxKlient.getSelectedItem();
+//        String sql = "select * from klient where name=?";
+//        
+//        
+//        try{           
+//            pst=conn.prepareStatement(sql);
+//            pst.setString(1, tmp);
+//            rs=pst.executeQuery();
+//            
+//            if(rs.next()){
+//                String add = rs.getString("Kli_Imie");
+//                jTextFieldImie.setText(add);
+//                
+//                        
+//            }
+//          
+//            
+//        } catch (Exception e){
+//            JOptionPane.showMessageDialog(null, "Błąd w AdminPanel: " + e);
+//        }
+        
+    }//GEN-LAST:event_jComboBoxKlientPopupMenuWillBecomeInvisible
+
+    private void jTextFieldImieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldImieActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldImieActionPerformed
+
     private void formWindowOpened(java.awt.event.WindowEvent evt) {                                  
 
         FillTable uzupelnij = new FillTable();
@@ -1780,9 +2161,12 @@ public class AdminPanel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable CompanyTable;
+    private javax.swing.JPanel NparagonPanel;
+    private javax.swing.JPanel NparagonPanel1;
     private javax.swing.JTextField ONTextField;
     private javax.swing.JPanel PricePanel;
     private javax.swing.JButton SaveChangesBtn;
+    private javax.swing.JPanel ZparagonPanel;
     private javax.swing.JTextField benzPointsField;
     private javax.swing.JMenuItem cameraItem;
     private javax.swing.JMenu cameraMenu;
@@ -1807,6 +2191,9 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JComboBox jComboBoxId;
+    private javax.swing.JComboBox jComboBoxKlient;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1847,8 +2234,22 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -1857,6 +2258,16 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextFieldCenaMyjni;
+    private javax.swing.JTextField jTextFieldCenaPaliwa;
+    private javax.swing.JTextField jTextFieldData1;
+    private javax.swing.JTextField jTextFieldImie;
     private javax.swing.JPanel klienciCard;
     private javax.swing.JMenuItem klientsItem;
     private javax.swing.JMenuItem logoffItem;
@@ -1877,8 +2288,10 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JTextField newRegonField;
     private javax.swing.JTextField newSurnameField;
     private javax.swing.JButton newUserBtn;
+    private javax.swing.JMenuItem niezarejestrowanyItem;
     private javax.swing.JTextField oil1TextField;
     private javax.swing.JTextField oil2TextField;
+    private javax.swing.JMenu paragonMenu;
     private javax.swing.JMenu priceMenu;
     private javax.swing.JPanel programPanel;
     private javax.swing.JMenuItem rulesItem;
@@ -1894,5 +2307,6 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JTextField washTextField;
     private javax.swing.JTextField waxField;
     private javax.swing.JTextField woskField;
+    private javax.swing.JMenuItem zarejestrowanyItem;
     // End of variables declaration//GEN-END:variables
 }

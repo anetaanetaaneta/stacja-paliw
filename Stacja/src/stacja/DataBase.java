@@ -40,6 +40,8 @@ public class DataBase {
                     return null;
                 }
      }
+     
+      
     
      public static void CreateTableProgram_Lojalnosciowy()
      {

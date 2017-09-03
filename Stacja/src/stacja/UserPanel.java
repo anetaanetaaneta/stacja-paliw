@@ -287,8 +287,6 @@ public class UserPanel extends javax.swing.JFrame {
         warnLabel.setForeground(new java.awt.Color(255, 0, 51));
         warnLabel.setText("Niepoprawna nazwa użytkownika lub hasło.");
 
-        PasswordField.setText("jPasswordField1");
-
         javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
         loginPanel.setLayout(loginPanelLayout);
         loginPanelLayout.setHorizontalGroup(
